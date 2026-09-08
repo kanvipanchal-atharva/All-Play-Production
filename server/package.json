@@ -1,0 +1,1 @@
+{"name":"@all-play/server","private":true,"version":"1.0.0","type":"module","scripts":{"dev":"node --watch --env-file-if-exists=../.env index.js","build":"node --check index.js && node --check app.js","start":"node --env-file-if-exists=../.env index.js"},"dependencies":{"express":"^5.2.0","helmet":"^8.1.0","cors":"^2.8.5","express-rate-limit":"^8.2.0"}}

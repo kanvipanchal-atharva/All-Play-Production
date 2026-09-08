@@ -1,0 +1,23 @@
+{
+  "name": "@all-play/client",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "lucide-react": "^0.577.0",
+    "framer-motion": "^12.34.0"
+  },
+  "devDependencies": {
+    "vite": "^7.3.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "tailwindcss": "^4.2.0",
+    "@tailwindcss/vite": "^4.2.0"
+  }
+}
