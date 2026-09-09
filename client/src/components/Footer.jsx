@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { ArrowUp, Instagram, MessageCircle } from "lucide-react";
+import { useEffect, useId, useState } from "react";
+import { ArrowUp, ChevronDown, Instagram, MessageCircle } from "lucide-react";
 import { contact, programs, whatsappUrl } from "../data";
 import { Logo, navigation } from "./Header";
 export function WhatsAppButton() {
@@ -54,6 +54,27 @@ export function FloatingActions() {
   }, []);
   return <div className={nearContact ? 'floating-actions near-contact' : 'floating-actions'}><WhatsAppButton /><ScrollToTop /></div>;
 }
+function FooterGroup({ title, children }) {
+  const [open, setOpen] = useState(false);
+  const contentId = useId();
+  return (
+    <div className={`footer-group${open ? " is-open" : ""}`}>
+      <h3 className="footer-group-title">{title}</h3>
+      <h3 className="footer-group-mobile-title">
+        <button
+          type="button"
+          className="footer-group-toggle"
+          aria-expanded={open}
+          aria-controls={contentId}
+          onClick={() => setOpen(!open)}
+        >
+          {title}<ChevronDown size={18} aria-hidden="true" />
+        </button>
+      </h3>
+      <div id={contentId} className="footer-group-content">{children}</div>
+    </div>
+  );
+}
 export default function Footer({ onPolicy, onSelect }) {
   return (
     <footer id="page-footer">
@@ -74,16 +95,14 @@ export default function Footer({ onPolicy, onSelect }) {
             <Instagram size={18} /> @allplayproductions
           </a>
         </div>
-        <div>
-          <h3>Explore</h3>
+        <FooterGroup title="Explore">
           {navigation.slice(1).map(([id, label]) => (
             <a key={id} href={`#${id}`}>
               {label}
             </a>
           ))}
-        </div>
-        <div>
-          <h3>Our Programs</h3>
+        </FooterGroup>
+        <FooterGroup title="Our Programs">
           {programs.map((program) => (
             <a
               key={program.id}
@@ -93,16 +112,17 @@ export default function Footer({ onPolicy, onSelect }) {
               {program.title}
             </a>
           ))}
-        </div>
+        </FooterGroup>
         <div>
-          <h3>Come Say Hello</h3>
-          <p>
-            Phone: {contact.phone || "To be confirmed"}
-            <br />
-            Email: {contact.email || "To be confirmed"}
-            <br />
-            Venue: {contact.venue || "To be confirmed"}
-          </p>
+          <FooterGroup title="Come Say Hello">
+            <p>
+              Phone: {contact.phone || "To be confirmed"}
+              <br />
+              Email: {contact.email || "To be confirmed"}
+              <br />
+              Venue: {contact.venue || "To be confirmed"}
+            </p>
+          </FooterGroup>
           <p>
             Founded by
             <br />

@@ -30,6 +30,7 @@ html {
 }
 body {
   margin: 0;
+  font-size: 18px;
 }
 button,
 input,
@@ -79,7 +80,7 @@ h3 {
   line-height: 1.3;
 }
 p {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.9;
 }
 p + p {
@@ -699,7 +700,7 @@ cite {
   margin-bottom: 5px;
 }
 .batch-panel p {
-  font-size: 12px;
+  font-size: 18px;
   margin: 0;
 }
 .batch-panel small {
@@ -957,7 +958,7 @@ cite {
 }
 .contact-details p,
 .contact-details a {
-  font-size: 12px;
+  font-size: 18px;
   color: #756b60;
   overflow-wrap: anywhere;
 }
@@ -979,7 +980,7 @@ cite {
   font-size: 29px;
 }
 .enquiry-form > p {
-  font-size: 12px;
+  font-size: 18px;
   margin: 8px 0 25px;
   color: #6b6256;
 }

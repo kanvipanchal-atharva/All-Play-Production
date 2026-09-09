@@ -36,9 +36,9 @@ export default function WhyTheatre() {
           />
           <div className="why-quote">
             “The best thing they
-            <br />
+            <br />{" "}
             bring off the stage?
-            <br />
+            <br />{" "}
             <em>Themselves.</em>”
           </div>
           <span className="image-label">ILLUSTRATED REHEARSAL PLACEHOLDER</span>
