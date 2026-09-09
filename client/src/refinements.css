@@ -114,7 +114,7 @@ p { line-height: 1.75; }
 .footer-grid p, .footer-grid > div > a:not(.logo) { font-size: 18px; }
 .footer-group-mobile-title { display: none; }
 .footer-bottom { font-size: 18px; }
-.footer-group-content > a { display: block; font-size: 12px; margin-bottom: 12px; }
+.footer-group-content > a { display: block; font-size: 18px; margin-bottom: 12px; }
 @media (max-width: 1199px) {
   .desktop-nav { gap: 13px; }
   .desktop-nav a { font-size: 10px; }
@@ -196,7 +196,7 @@ p { line-height: 1.75; }
   .footer-group.is-open .footer-group-toggle svg { transform: rotate(180deg); }
   .footer-group-content { display: none; padding-bottom: 16px; overflow-wrap: anywhere; }
   .footer-group.is-open .footer-group-content { display: block; }
-  .footer-group-content > a { display: flex; align-items: center; min-height: 44px; margin: 0; padding: 8px 0; }
+  .footer-group-content > a { display: flex; align-items: center; min-height: 44px; margin: 0; padding: 8px 0; font-size: 14px; }
   .footer-group-content > p:first-child { margin-top: 0; }
   .footer-bottom { flex-direction: column; align-items: center; gap: 6px; margin-top: 24px; padding: 18px 0 calc(18px + env(safe-area-inset-bottom, 0px)); font-size: 18px; line-height: 1.6; text-align: center; }
   .footer-bottom > span { max-width: 100%; overflow-wrap: anywhere; }
@@ -251,3 +251,10 @@ p { line-height: 1.75; }
   .footer-grid > div > a:not(.logo),
   .footer-bottom { font-size: 14px; }
 }
+
+/* Footer typography is consistent across screen sizes. */
+#page-footer p,
+#page-footer h3,
+#page-footer a:not(.logo),
+#page-footer button,
+#page-footer .footer-bottom { font-size: 12px; }
