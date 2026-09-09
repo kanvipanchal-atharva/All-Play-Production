@@ -5,10 +5,10 @@ export default function Hero() {
     <section id="home" className="hero">
       <img
         className="hero-art"
-        src="/assets/hero.svg"
-        width="1920"
-        height="1080"
-        alt="Illustrated theatre stage with velvet curtains and golden spotlights; placeholder for an approved performance photograph"
+        src="/Demo.jpeg"
+        width="1600"
+        height="1068"
+        alt="Children performing together on stage at All Play Productions"
         fetchPriority="high"
       />
       <div className="hero-shade" />
@@ -34,7 +34,7 @@ export default function Hero() {
         </div>
         <div className="hero-tagline">
           <span />
-          Every Stage Begins with the Courage to Play.
+          All Play... a carnival of joy.
         </div>
       </div>
       <div className="hero-bottom container">
@@ -44,7 +44,7 @@ export default function Hero() {
         <span>IMAGINE. EXPRESS. BECOME.</span>
       </div>
       <span className="artwork-credit">
-        THEATRE ARTWORK · PHOTO PLACEHOLDER
+        ALL PLAY PRODUCTIONS · ON STAGE
       </span>
     </section>
   );

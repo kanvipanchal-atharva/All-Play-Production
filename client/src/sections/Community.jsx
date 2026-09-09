@@ -18,14 +18,14 @@ export default function Community() {
           <div className="section-top">
             <SectionHeading
               eyebrow="ON STAGE & IN THE MAKING"
-              description="Rehearsals, workshops and moments on stage."
+              description="Community outreach, original productions and opportunities for young voices."
             >
               Stories Beyond <em>the Script</em>
             </SectionHeading>
             <span className="small-note">
-              Sample collection
+              Our journey so far
               <br />
-              Confirmed events coming soon
+              Highlights from our leaflet
             </span>
           </div>
           <div className="event-grid">
@@ -50,7 +50,7 @@ export default function Community() {
           <div className="section-top">
             <SectionHeading
               eyebrow="A LITTLE PLAY. A LOT OF HEART."
-              description="Illustrated previews. Approved photographs coming soon."
+              description="Young performers sharing the joy of theatre on stage."
             >
               Moments from <em>All Play</em>
             </SectionHeading>
@@ -94,7 +94,7 @@ export default function Community() {
               <Artwork
                 key={src}
                 src={src}
-                alt={`Sample ${event.title} highlight illustration ${imageIndex + 1}`}
+                alt={`All Play Productions stage performance, photo ${imageIndex + 1}`}
               />
             ))}
           </div>
@@ -117,7 +117,7 @@ export default function Community() {
               <ArrowLeft />
             </button>
             <span aria-live="polite">
-              {index + 1} / {gallery.length} · Illustrated placeholder
+              {index + 1} / {gallery.length} · All Play on stage
             </span>
             <button
               className="icon-button"

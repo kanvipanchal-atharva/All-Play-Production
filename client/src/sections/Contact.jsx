@@ -40,7 +40,7 @@ export default function Contact({ selectedProgram, onSelect }) {
               {[
                 [
                   Phone,
-                  "Phone / WhatsApp",
+                  "Phone",
                   contact.phone,
                   contact.phone
                     ? `tel:${contact.phone.replace(/\s/g, "")}`
@@ -64,6 +64,11 @@ export default function Contact({ selectedProgram, onSelect }) {
                     ) : (
                       <p>{value || "To be confirmed"}</p>
                     )}
+                    {label === "Phone" && contact.additionalPhones.map((phone) => (
+                      <a className="additional-phone" key={phone} href={`tel:${phone.replace(/\s/g, "")}`}>
+                        {phone}
+                      </a>
+                    ))}
                   </div>
                 </div>
               ))}

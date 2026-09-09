@@ -31,8 +31,8 @@ export default function WhyTheatre() {
         </Reveal>
         <Reveal className="why-visual">
           <Artwork
-            src="/assets/teens.svg"
-            alt="Illustrated rehearsal placeholder; replace with an approved rehearsal photograph"
+            src="/Demo.jpeg"
+            alt="Children performing together on stage at All Play Productions"
           />
           <div className="why-quote">
             “The best thing they
@@ -41,7 +41,7 @@ export default function WhyTheatre() {
             <br />{" "}
             <em>Themselves.</em>”
           </div>
-          <span className="image-label">ILLUSTRATED REHEARSAL PLACEHOLDER</span>
+          <span className="image-label">ALL PLAY ON STAGE</span>
         </Reveal>
       </div>
     </section>

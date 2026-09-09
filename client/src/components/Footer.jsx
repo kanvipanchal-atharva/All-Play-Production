@@ -117,6 +117,9 @@ export default function Footer({ onPolicy, onSelect }) {
           <FooterGroup title="Come Say Hello">
             <p>
               Phone: {contact.phone || "To be confirmed"}
+              {contact.additionalPhones.map((phone) => (
+                <span key={phone}><br />{phone}</span>
+              ))}
               <br />
               Email: {contact.email || "To be confirmed"}
               <br />

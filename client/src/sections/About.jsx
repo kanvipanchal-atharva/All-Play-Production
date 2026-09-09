@@ -9,15 +9,15 @@ export default function About() {
           <Reveal className="about-collage">
             <div className="collage-main">
               <Artwork
-                src="/assets/workshop.svg"
-                alt="Illustrated rehearsal placeholder with performers practising on stage"
+                src="/Demo.jpeg"
+                alt="Children performing together on stage at All Play Productions"
               />
               <span className="image-label">ROOM FOR EVERY IMAGINATION</span>
             </div>
             <div className="collage-small">
               <Artwork
-                src="/assets/children.svg"
-                alt="Illustrated children's theatre placeholder"
+                src="/Demo.jpeg"
+                alt="Children performing together on stage at All Play Productions"
               />
             </div>
           </Reveal>
@@ -28,10 +28,11 @@ export default function About() {
               Meets <em>Confidence</em>
             </SectionHeading>
             <p>
-              Founded by Mrs. Varshaa Raane, All Play Productions helps young
-              performers explore theatre through playful learning, structured
-              training and live performance. A space to express yourself—and
-              grow with every rehearsal.
+              All Play Productions, in association with Atharva Foundation,
+              introduces children to drama and performing arts through fun and
+              joy. Our workshops help children discover their individuality,
+              build self-esteem and find the courage to share their unique
+              voices with the world.
             </p>
             <div className="highlights">
               {[
@@ -56,10 +57,9 @@ export default function About() {
         <div className="container founder-layout">
           <Reveal className="portrait-frame">
             <Artwork
-              src="/assets/founder.svg"
-              alt="Founder portrait placeholder — approved photograph of Mrs. Varshaa Raane to be supplied"
+              src="/Founder.jpeg"
+              alt="Mrs. Varshaa Raane, Founder and Creator of All Play Productions"
             />
-            <span>APPROVED PHOTOGRAPH TO COME</span>
           </Reveal>
           <Reveal>
             <p className="eyebrow">
@@ -71,7 +71,7 @@ export default function About() {
             </h2>
             <h3 className="founder-name">Mrs. Varshaa Raane</h3>
             <p className="founder-role">
-              Founder & Creator, All Play Productions
+              Founder & Creator, All Play Productions · Vice Chairman, Atharva Foundation
             </p>
             <p>
               Actor, filmmaker and advocate for creative education. Mrs. Varshaa Raane created

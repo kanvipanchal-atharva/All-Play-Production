@@ -1,22 +1,46 @@
 export const events = [
-  "Theatre Productions",
-  "Student Performances",
-  "Rehearsals",
-  "Drama Workshops",
-  "Cultural Celebrations",
-  "Guest Sessions",
-  "Behind-the-Scenes Moments",
-].map((title, index) => ({
-  id: index,
-  title,
-  date: "Date to be confirmed",
-  category: ["On stage", "Young voices", "In the making"][index % 3],
-  image: ["/assets/stage.svg", "/assets/teens.svg", "/assets/workshop.svg"][
-    index % 3
-  ],
-  description:
-    "Sample content · A space for future stories from our creative community.",
-  highlights:
-    "This is a sample highlights preview. Approved event photographs, descriptions and dates will be added here after confirmation.",
-  images: ["/assets/stage.svg", "/assets/workshop.svg"],
+  {
+    id: "outreach",
+    title: "Over 500 Children Empowered",
+    date: "Community outreach",
+    category: "Our impact",
+    description: "Drama and performing arts reaching children in Gorai, Manori and Borivali schools.",
+    highlights: "Our outreach has empowered over 500 children, including children from tribal areas. The leaflet records Season 1 in Gorai in 2020, Season 2 in Manori in 2021, and Season 3 in Borivali schools in 2022?23. Hands-on learning encourages imagination, confidence and artistic expression.",
+  },
+  {
+    id: "productions",
+    title: "Our In-house Productions",
+    date: "Production highlights",
+    category: "On stage",
+    description: "Kshitijachya Palikade, Ghonga Basant, Mi Nahi Janaar Shalela and Deva Shree Ganesha.",
+    highlights: "All Play?s in-house productions include Kshitijachya Palikade, Ghonga Basant, Mi Nahi Janaar Shalela and Deva Shree Ganesha. These productions give young performers opportunities to explore their imagination and express themselves through theatre.",
+  },
+  {
+    id: "platforms",
+    title: "A Wider Stage",
+    date: "Performance highlights",
+    category: "Platform exposure",
+    description: "Participation in Maharashtra Rajya Balnatya Spardha and the international virtual competition Jhankriti.",
+    highlights: "The leaflet records participation in Maharashtra Rajya Balnatya Spardha for three consecutive years and in Jhankriti, an international virtual competition organised by Sri Sri Ravi Shankar. Children also performed the street play Ek Itihaas in and around Borivali for India?s 75th Independence Day.",
+  },
+  {
+    id: "industry",
+    title: "Beyond the Rehearsal Room",
+    date: "Industry exposure",
+    category: "Behind the scenes",
+    description: "Zee Marathi Drama Junior auditions, live set visits and introductions to production houses.",
+    highlights: "Young artists have had exposure to the sets of Chala Hawa Yeu Dya, auditions for Zee Marathi Drama Junior, introductions to production houses and opportunities to visit live sets.",
+  },
+  {
+    id: "guests",
+    title: "Learning from Artists",
+    date: "Guest interactions",
+    category: "Creative encounters",
+    description: "Conversations and encounters with actors, writers and television personalities.",
+    highlights: "The leaflet features interactions with Mahesh Kothare, Sharad Ponkshe, Siddharth Jadhav, Pradip Kabre, Dr. Nilesh Sable and Pandharinath Kamble (Paddy). These include guest visits, shared lessons and encounters on the sets of Chala Hawa Yeu Dya.",
+  },
+].map((event) => ({
+  ...event,
+  image: "/Demo.jpeg",
+  images: ["/Demo.jpeg"],
 }));

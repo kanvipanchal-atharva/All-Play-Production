@@ -6,7 +6,7 @@ export function ProgramCard({ program, onSelect }) {
       <div className="card-image">
         <Artwork
           src={program.image}
-          alt={`Illustrated placeholder for ${program.title}`}
+          alt="Children performing together on stage at All Play Productions"
         />
         <span className="badge">{program.badge}</span>
       </div>
@@ -43,7 +43,7 @@ export function EventCard({ event, onOpen }) {
       <div className="card-image">
         <Artwork
           src={event.image}
-          alt={`Sample illustration for ${event.title}`}
+          alt="Children performing together on stage at All Play Productions"
         />
         <span className="badge">{event.category}</span>
       </div>
@@ -70,7 +70,7 @@ export function GalleryItem({ item, onOpen }) {
         <Instagram size={23} />
         <span>
           {item.title}
-          <small>Illustrated placeholder</small>
+          <small>All Play on stage</small>
         </span>
         <ArrowUpRight size={20} />
       </span>

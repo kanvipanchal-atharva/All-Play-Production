@@ -4,7 +4,7 @@ export const programs = [
     title: "Children’s Theatre Program",
     badge: "AGES 7–14",
     icon: "Sparkles",
-    image: "/assets/children.svg",
+    image: "/Demo.jpeg",
     description:
       "Playful acting exercises to build imagination, speech and stage confidence.",
   },
@@ -13,7 +13,7 @@ export const programs = [
     title: "Teen Theatre Program",
     badge: "AGES 15–19",
     icon: "Drama",
-    image: "/assets/teens.svg",
+    image: "/Demo.jpeg",
     description:
       "Develop your acting, storytelling and communication through performance.",
   },
@@ -22,7 +22,7 @@ export const programs = [
     title: "Drama Workshops",
     badge: "EXPLORE & EXPRESS",
     icon: "Mic",
-    image: "/assets/workshop.svg",
+    image: "/Demo.jpeg",
     description:
       "Explore improvisation, voice, movement, character and stagecraft.",
   },
@@ -31,7 +31,7 @@ export const programs = [
     title: "Stage Productions",
     badge: "FROM REHEARSAL TO STAGE",
     icon: "Clapperboard",
-    image: "/assets/stage.svg",
+    image: "/Demo.jpeg",
     description:
       "Put your skills into practice through rehearsals and live theatre.",
   },

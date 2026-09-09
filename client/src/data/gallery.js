@@ -11,11 +11,6 @@ export const gallery = [
 ].map((title, index) => ({
   id: index,
   title,
-  src: [
-    "/assets/children.svg",
-    "/assets/teens.svg",
-    "/assets/stage.svg",
-    "/assets/workshop.svg",
-  ][index % 4],
-  alt: `Illustrated theatre placeholder: ${title.toLowerCase()}`,
+  src: "/Demo.jpeg",
+  alt: "Children performing together on stage at All Play Productions",
 }));

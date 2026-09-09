@@ -1,10 +1,11 @@
 export const contact = {
   brand: "All Play Productions",
   founder: "Mrs. Varshaa Raane",
-  phone: "",
+  phone: "+91 9082244109",
+  additionalPhones: ["+91 9930255054", "+91 9167967756"],
   whatsapp: "",
   email: "",
-  venue: "",
+  venue: "The Village Art & Culture Center, Kora Kendra Hall, behind Golden Delicacy Restaurant, Shimpoli Road (opposite Reliance Mall), Shimpoli, Borivali (W)",
   timings: "",
   instagram: "https://www.instagram.com/allplayproductions/",
   founderInstagram: "https://www.instagram.com/p/C31wMODRgZk/",

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Drama } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Modal from "./Modal";
 export const navigation = [
   ["home", "Home"],
@@ -13,7 +13,7 @@ export const navigation = [
 export function Logo() {
   return (
     <a href="#home" className="logo" aria-label="All Play Productions home">
-      <Drama size={37} strokeWidth={1.3} />
+      <img className="brand-logo" src="/logo-web.png" width="280" height="325" alt="All Play Productions logo" />
       <span>
         ALL PLAY<small>PRODUCTIONS</small>
       </span>

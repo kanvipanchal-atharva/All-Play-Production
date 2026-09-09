@@ -21,13 +21,13 @@ export const learning = [
     title: "Storytelling & Improvisation",
     icon: "BookOpen",
     description:
-      "Think spontaneously. Turn ideas into stories.",
+      "Think creatively, solve problems in real time and turn ideas into stories.",
   },
   {
     title: "Confidence & Self-Expression",
     icon: "Sparkles",
     description:
-      "Share your ideas and find your voice.",
+      "Build self-esteem and the courage to share your unique voice with the world.",
   },
   {
     title: "Teamwork & Stage Discipline",

@@ -23,7 +23,7 @@ for (const width of [320, 375, 768, 1024, 1440])
         ),
       ).toBeTruthy();
     }
-    await expect(page.locator("img")).toHaveCount(21);
+    await expect(page.locator("img")).toHaveCount(23);
     expect(
       await page
         .locator("img")
@@ -81,17 +81,17 @@ test("gallery has focus containment, arrow navigation and close restoration", as
   await page.keyboard.press("Escape");
   await expect(trigger).toBeFocused();
 });
-test("all seven event categories and policy placeholders open", async ({
+test("leaflet activity highlights and policy placeholders open", async ({
   page,
 }) => {
   await page.goto("/");
   await page.getByRole("button", { name: "Explore All Activities" }).click();
   await expect(
     page.getByRole("button", { name: "View Highlights" }),
-  ).toHaveCount(7);
+  ).toHaveCount(5);
   await page.getByRole("button", { name: "View Highlights" }).first().click();
   await expect(page.getByRole("dialog")).toContainText(
-    "sample highlights preview",
+    "empowered over 500 children",
   );
   await page.keyboard.press("Escape");
   await page

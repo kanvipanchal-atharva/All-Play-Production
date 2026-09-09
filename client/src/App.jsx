@@ -9,6 +9,7 @@ import Programs from "./sections/Programs";
 import WhyTheatre from "./sections/WhyTheatre";
 import Community from "./sections/Community";
 import Contact from "./sections/Contact";
+import FuturePlans from "./sections/FuturePlans";
 export default function App() {
   const [selectedProgram, setSelectedProgram] = useState("");
   const [policy, setPolicy] = useState(null);
@@ -35,6 +36,7 @@ export default function App() {
         <Programs onSelect={setSelectedProgram} />
         <WhyTheatre />
         <Community />
+        <FuturePlans />
         <Contact
           selectedProgram={selectedProgram}
           onSelect={setSelectedProgram}
