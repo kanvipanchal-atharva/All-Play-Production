@@ -34,6 +34,7 @@ export default function About() {
               build self-esteem and find the courage to share their unique
               voices with the world.
             </p>
+            <a className="text-link section-read-more" href="/about-theatre">Read more about the theatre &rarr;</a>
             <div className="highlights">
               {[
                 "Structured Training",
@@ -58,7 +59,7 @@ export default function About() {
           <Reveal className="portrait-frame">
             <Artwork
               src="/Founder.jpeg"
-              alt="Mrs. Varshaa Raane, Founder and Creator of All Play Productions"
+              alt="Mrs. Varsha Rane, Founder and Creator of All Play Productions"
             />
           </Reveal>
           <Reveal>
@@ -69,16 +70,17 @@ export default function About() {
             <h2 id="founder-title">
               Meet Our <em>Founder</em>
             </h2>
-            <h3 className="founder-name">Mrs. Varshaa Raane</h3>
+            <h3 className="founder-name">Mrs. Varsha Rane</h3>
             <p className="founder-role">
               Founder & Creator, All Play Productions · Vice Chairman, Atharva Foundation
             </p>
             <p>
-              Actor, filmmaker and advocate for creative education. Mrs. Varshaa Raane created
+              Actor, filmmaker and advocate for creative education. Mrs. Varsha Rane created
               All Play Productions to make performing arts an empowering
               experience for young learners.
             </p>
             <div className="founder-bottom">
+              <a className="text-link" href="/founder">Read more about our founder &rarr;</a>
               <a
                 href={contact.founderInstagram}
                 className="text-link"

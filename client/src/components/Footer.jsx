@@ -1,12 +1,12 @@
 import { useEffect, useId, useState } from "react";
 import { ArrowUp, ChevronDown, Instagram, MessageCircle } from "lucide-react";
 import { contact, programs, whatsappUrl } from "../data";
-import { Logo, navigation } from "./Header";
+import { Logo, navigation, navigationHref } from "./Header";
 export function WhatsAppButton() {
   return (
     <a
       className="floating-whatsapp"
-      href={whatsappUrl}
+      href={contact.whatsapp ? whatsappUrl : navigationHref("contact")}
       aria-label={
         contact.whatsapp
           ? "Contact us on WhatsApp"
@@ -32,7 +32,7 @@ export function ScrollToTop() {
   }, []);
   return (
     show && (
-      <a className="scroll-top" href="#home" aria-label="Scroll to top">
+      <a className="scroll-top" href={navigationHref("home")} aria-label="Scroll to top">
         <ArrowUp size={20} />
       </a>
     )
@@ -97,7 +97,7 @@ export default function Footer({ onPolicy, onSelect }) {
         </div>
         <FooterGroup title="Explore">
           {navigation.slice(1).map(([id, label]) => (
-            <a key={id} href={`#${id}`}>
+            <a key={id} href={navigationHref(id)}>
               {label}
             </a>
           ))}
@@ -106,7 +106,7 @@ export default function Footer({ onPolicy, onSelect }) {
           {programs.map((program) => (
             <a
               key={program.id}
-              href="#contact"
+              href={window.location.pathname === "/" ? "#contact" : `/?program=${program.id}#contact`}
               onClick={() => onSelect(program.id)}
             >
               {program.title}
@@ -129,7 +129,7 @@ export default function Footer({ onPolicy, onSelect }) {
           <p>
             Founded by
             <br />
-            <span className="gold">Mrs. Varshaa Raane</span>
+            <span className="gold">Mrs. Varsha Rane</span>
           </p>
         </div>
       </div>

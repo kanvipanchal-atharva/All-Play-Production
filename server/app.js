@@ -122,7 +122,7 @@ export function createApp({ rateMax = 10 } = {}) {
     }),
   );
   app.use(express.static(dist, { maxAge: 0 }));
-  app.get("/", (_req, res) => res.sendFile(`${dist}/index.html`));
+  app.get(["/", "/founder", "/about-theatre"], (_req, res) => res.sendFile(`${dist}/index.html`));
   app.use((_req, res) =>
     res.status(404).json({ success: false, message: "Page not found." }),
   );

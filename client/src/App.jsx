@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MotionConfig } from "framer-motion";
 import Header from "./components/Header";
 import Footer, { FloatingActions } from "./components/Footer";
@@ -10,16 +10,20 @@ import WhyTheatre from "./sections/WhyTheatre";
 import Community from "./sections/Community";
 import Contact from "./sections/Contact";
 import FuturePlans from "./sections/FuturePlans";
+import FounderPage from "./pages/FounderPage";
+import TheatrePage from "./pages/TheatrePage";
 export default function App() {
-  const [selectedProgram, setSelectedProgram] = useState("");
+  const [selectedProgram, setSelectedProgram] = useState(new URLSearchParams(window.location.search).get("program") || "");
   const [policy, setPolicy] = useState(null);
+  const page = window.location.pathname.replace(/\/$/, "");
+  useEffect(() => {
+    document.title = page === "/founder" ? "Our Founder | All Play Productions" : page === "/about-theatre" ? "About the Theatre | All Play Productions" : "All Play Productions | Theatre and Drama Training";
+  }, [page]);
   return (
     <MotionConfig reducedMotion="user">
-      <a className="skip-link" href="#main">
-        Skip to content
-      </a>
       <Header />
       <main id="main">
+        {page === "/founder" ? <FounderPage /> : page === "/about-theatre" ? <TheatrePage /> : <>
         <Hero />
         <div className="values-strip" aria-label="Our approach">
           <span>IMAGINATION</span>
@@ -41,6 +45,7 @@ export default function App() {
           selectedProgram={selectedProgram}
           onSelect={setSelectedProgram}
         />
+        </>}
       </main>
       <Footer onPolicy={setPolicy} onSelect={setSelectedProgram} />
       <FloatingActions />

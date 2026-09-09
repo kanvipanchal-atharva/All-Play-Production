@@ -1,6 +1,6 @@
 export const contact = {
   brand: "All Play Productions",
-  founder: "Mrs. Varshaa Raane",
+  founder: "Mrs. Varsha Rane",
   phone: "+91 9082244109",
   additionalPhones: ["+91 9930255054", "+91 9167967756"],
   whatsapp: "",

@@ -3,16 +3,21 @@ import { Menu, X } from "lucide-react";
 import Modal from "./Modal";
 export const navigation = [
   ["home", "Home"],
-  ["about", "About Us"],
+  ["about-theatre", "About the Theatre"],
+  ["founder", "Founder"],
   ["programs", "Our Programs"],
   ["why-theatre", "Why Theatre?"],
   ["performances", "Performances"],
   ["gallery", "Gallery"],
   ["contact", "Contact"],
 ];
+export function navigationHref(id) {
+  if (id === "founder" || id === "about-theatre") return `/${id}`;
+  return `${window.location.pathname === "/" ? "" : "/"}#${id}`;
+}
 export function Logo() {
   return (
-    <a href="#home" className="logo" aria-label="All Play Productions home">
+    <a href={navigationHref("home")} className="logo" aria-label="All Play Productions home">
       <img className="brand-logo" src="/logo-web.png" width="280" height="325" alt="All Play Productions logo" />
       <span>
         ALL PLAY<small>PRODUCTIONS</small>
@@ -25,11 +30,11 @@ export function MobileMenu({ onClose }) {
     <Modal title="Explore All Play" onClose={onClose}>
       <nav className="mobile-links" aria-label="Mobile navigation">
         {navigation.map(([id, label]) => (
-          <a key={id} href={`#${id}`} onClick={onClose}>
+          <a key={id} href={navigationHref(id)} onClick={onClose}>
             {label}
           </a>
         ))}
-        <a href="#contact" className="button" onClick={onClose}>
+        <a href={navigationHref("contact")} className="button" onClick={onClose}>
           Join Our Theatre Program
         </a>
       </nav>
@@ -63,21 +68,21 @@ export default function Header() {
   }, []);
   return (
     <>
-      <header className={`header ${scrolled ? "is-scrolled" : ""}`}>
+      <header className={`header ${scrolled || window.location.pathname !== "/" ? "is-scrolled" : ""}`}>
         <div className="header-inner">
           <Logo />
           <nav className="desktop-nav" aria-label="Main navigation">
             {navigation.map(([id, label]) => (
               <a
                 key={id}
-                href={`#${id}`}
-                aria-current={active === id ? "location" : undefined}
+                href={navigationHref(id)}
+                aria-current={window.location.pathname === `/${id}` ? "page" : window.location.pathname === "/" && active === id ? "location" : undefined}
               >
                 {label}
               </a>
             ))}
           </nav>
-          <a className="header-cta" href="#contact">
+          <a className="header-cta" href={navigationHref("contact")}>
             Join Our Theatre Program <span aria-hidden="true">↗</span>
           </a>
           <button

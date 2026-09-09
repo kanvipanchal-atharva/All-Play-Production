@@ -1,4 +1,25 @@
 /* Editorial refinement: shorter sections, quieter decoration, readable copy. */
+.section-read-more { margin-top: 20px; }
+.founder-bottom { flex-wrap: wrap; }
+.profile-page { padding: 130px 0 72px; }
+.profile-intro { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: 64px; align-items: center; margin: 36px 0 56px; }
+.profile-intro h1 { font-size: clamp(38px, 4.5vw, 64px); margin-bottom: 24px; }
+.profile-intro h1 em { color: var(--maroon); }
+.profile-intro img { width: 100%; height: auto; border-radius: 4px; }
+.profile-intro .profile-lead { color: var(--maroon); margin-bottom: 18px; }
+.profile-body { max-width: none; margin-inline: 0; }
+.profile-body section { margin-bottom: 40px; }
+.profile-body h2 { font-size: clamp(27px, 3vw, 38px); margin-bottom: 20px; }
+.theatre-page .profile-intro { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.theatre-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding: 28px; margin-bottom: 48px; background: #f6efea; text-align: center; }
+.theatre-stats strong { font-family: var(--font-display); font-size: 42px; color: var(--maroon); }
+@media (max-width: 767px) {
+  .profile-page { padding: 108px 0 48px; }
+  .profile-intro, .theatre-page .profile-intro { grid-template-columns: minmax(0, 1fr); gap: 28px; margin: 28px 0 36px; }
+  .profile-intro img { max-width: 340px; margin-inline: auto; }
+  .theatre-page .profile-intro img { max-width: none; }
+  .theatre-stats { gap: 16px; padding: 20px 16px; }
+}
 .logo .brand-logo { width: 52px; height: 62px; object-fit: contain; }
 .footer-grid .brand-logo { width: 70px; height: 82px; }
 .additional-phone { display: block; margin-top: 6px; }
