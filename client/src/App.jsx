@@ -12,6 +12,7 @@ import Contact from "./sections/Contact";
 import FuturePlans from "./sections/FuturePlans";
 import FounderPage from "./pages/FounderPage";
 import TheatrePage from "./pages/TheatrePage";
+import DoodleRail from "./components/Doodles";
 export default function App() {
   const [selectedProgram, setSelectedProgram] = useState(new URLSearchParams(window.location.search).get("program") || "");
   const [policy, setPolicy] = useState(null);
@@ -22,6 +23,7 @@ export default function App() {
   return (
     <MotionConfig reducedMotion="user">
       <Header />
+      <DoodleRail />
       <main id="main">
         {page === "/founder" ? <FounderPage /> : page === "/about-theatre" ? <TheatrePage /> : <>
         <Hero />

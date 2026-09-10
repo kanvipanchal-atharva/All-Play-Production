@@ -2,10 +2,12 @@ import { MapPin, Mail, Phone, Clock, Instagram } from "lucide-react";
 import { SectionHeading, PrimaryButton } from "../components/UI";
 import EnquiryForm from "../components/EnquiryForm";
 import { contact, whatsappUrl } from "../data";
+import { Doodle } from "../components/Doodles";
 export default function Contact({ selectedProgram, onSelect }) {
   return (
     <>
       <section className="cta-section">
+        <Doodle kind="masks" className="cta-doodle" />
         <div className="container">
           <p className="eyebrow">THE NEXT CHAPTER STARTS HERE</p>
           <h2>

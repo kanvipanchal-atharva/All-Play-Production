@@ -1,12 +1,14 @@
 import { Check, Instagram } from "lucide-react";
 import { Artwork, Reveal, SectionHeading } from "../components/UI";
 import { contact } from "../data";
+import { Doodle } from "../components/Doodles";
 export default function About() {
   return (
     <>
       <section id="about" className="section about-section">
         <div className="container split">
           <Reveal className="about-collage">
+            <Doodle kind="kite" className="collage-doodle" />
             <div className="collage-main">
               <Artwork
                 src="/Demo.jpeg"

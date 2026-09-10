@@ -5,10 +5,10 @@ export default function Hero() {
     <section id="home" className="hero">
       <img
         className="hero-art"
-        src="/hero.jpeg"
-        width="1600"
-        height="1068"
-        alt="Children performing together on stage at All Play Productions"
+        src="/playful-children.png"
+        width="1536"
+        height="1024"
+        alt="Watercolor illustration of children dancing, playing theatre and flying colorful kites"
         fetchPriority="high"
       />
       <div className="hero-shade" />
@@ -44,7 +44,7 @@ export default function Hero() {
         <span>IMAGINE. EXPRESS. BECOME.</span>
       </div>
       <span className="artwork-credit">
-        ALL PLAY PRODUCTIONS · ON STAGE
+        IMAGINATION TAKES FLIGHT
       </span>
     </section>
   );
