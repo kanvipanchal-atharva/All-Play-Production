@@ -20,7 +20,7 @@ export function Logo() {
     <a href={navigationHref("home")} className="logo" aria-label="All Play Productions home">
       <img className="brand-logo" src="/logo-web.png" width="280" height="325" alt="All Play Productions logo" />
       <span>
-        ALL PLAY<small>PRODUCTIONS</small>
+        ALL PLAY PRODUCTIONS
       </span>
     </a>
   );

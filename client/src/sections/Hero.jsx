@@ -5,7 +5,7 @@ export default function Hero() {
     <section id="home" className="hero">
       <img
         className="hero-art"
-        src="/Demo.jpeg"
+        src="/hero.jpeg"
         width="1600"
         height="1068"
         alt="Children performing together on stage at All Play Productions"
