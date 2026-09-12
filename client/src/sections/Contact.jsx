@@ -60,7 +60,7 @@ export default function Contact({ selectedProgram, onSelect }) {
                 <div key={label}>
                   <Icon size={21} strokeWidth={1.4} />
                   <div>
-                    <h3>{label}</h3>
+                    <h3>{label === "Phone" ? "Theatre enquiries" : label}</h3>
                     {href ? (
                       <a href={href}>{value}</a>
                     ) : (
@@ -74,6 +74,10 @@ export default function Contact({ selectedProgram, onSelect }) {
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="film-contact">
+              <h3>Film enquiries</h3><p>Bol Bol Raani, Itta Itta Aani</p>
+              {contact.filmPhones.map(phone => <a key={phone} href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>)}
             </div>
             <a
               className="social-link"

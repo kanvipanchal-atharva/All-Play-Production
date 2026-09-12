@@ -4,7 +4,7 @@ import { events, gallery, contact } from "../data";
 import { SectionHeading, Artwork } from "../components/UI";
 import { EventCard, GalleryItem } from "../components/Cards";
 import Modal from "../components/Modal";
-export default function Community() {
+export default function Community({ section }) {
   const [event, setEvent] = useState(null);
   const [index, setIndex] = useState(null);
   const [expanded, setExpanded] = useState(false);
@@ -13,7 +13,7 @@ export default function Community() {
   const next = () => setIndex((value) => (value + 1) % gallery.length);
   return (
     <>
-      <section id="performances" className="section">
+      {section !== "gallery" && <section id="performances" className="section">
         <div className="container">
           <div className="section-top">
             <SectionHeading
@@ -25,8 +25,19 @@ export default function Community() {
             <span className="small-note">
               Our journey so far
               <br />
-              Highlights from our leaflet
+              Theatre, outreach and film
             </span>
+          </div>
+          <div className="film-feature">
+            <img src="/documents/bol-bol-raani-1.png" alt="Bol Bol Raani, Itta Itta Aani film poster" loading="lazy" />
+            <div>
+              <p className="eyebrow">OUR FIRST SHORT FILM</p>
+              <h2>Bol Bol Raani, <em>Itta Itta Aani</em></h2>
+              <p>A woman with mystical powers struggles to find acceptance in a world that sees her as different. Her deeply personal journey explores resilience, vulnerability and learning to embrace who she is.</p>
+              <p>Written and directed by Varshaa Raane, the film also marks her acting debut alongside students of her School of Drama and Theatre.</p>
+              <p>All Play Productions in association with Atharva University, Mumbai.</p>
+              <a className="text-link" href="/documents/bol-bol-raani.pdf" target="_blank" rel="noreferrer">View the film leaflet (PDF) &rarr;</a>
+            </div>
           </div>
           <div className="event-grid">
             {(expanded ? events : events.slice(0, 3)).map((item) => (
@@ -44,13 +55,13 @@ export default function Community() {
             </button>
           </div>
         </div>
-      </section>
-      <section id="gallery" className="section gallery-section">
+      </section>}
+      {section !== "performances" && <section id="gallery" className="section gallery-section">
         <div className="container">
           <div className="section-top">
             <SectionHeading
               eyebrow="A LITTLE PLAY. A LOT OF HEART."
-              description="Young performers sharing the joy of theatre on stage."
+              description="Explore our stage work, film poster and the leaflets that tell our story."
             >
               Moments from <em>All Play</em>
             </SectionHeading>
@@ -84,10 +95,10 @@ export default function Community() {
             </a>
           </div>
         </div>
-      </section>
+      </section>}
       {event && (
         <Modal title={event.title} onClose={() => setEvent(null)}>
-          <p className="sample-label">SAMPLE HIGHLIGHTS · {event.date}</p>
+          <p className="sample-label">{event.date}</p>
           <p>{event.highlights}</p>
           <div className="modal-images">
             {event.images.map((src, imageIndex) => (

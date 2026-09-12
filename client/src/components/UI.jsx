@@ -27,7 +27,7 @@ export function Icon({ name, ...props }) {
 }
 export function PrimaryButton({
   children,
-  href = "#contact",
+  href = "/contact#contact",
   secondary = false,
   ...props
 }) {

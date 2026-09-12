@@ -18,7 +18,7 @@ export default function TheatrePage() {
         <div className="profile-body">
           <section>
             <h2>Where Our Story <em>Began</em></h2>
-            <p>The journey began with rural and tribal children from Gorai, Manori and Borivali. Theatre and drama became tools for self-discovery, confidence and expression, opening an inclusive space for children to discover their individuality.</p>
+            <p>During COVID-19, the team took theatre training to children in and around Borivali, including those without internet or mobile phone access. The journey reached rural and tribal children in Gorai, Manori and Borivali. Theatre and drama became tools for self-discovery, confidence and expression, opening an inclusive space for children to discover their individuality.</p>
             <p>At its heart is the belief that every child matters and that opportunities are waiting to be explored. Children are encouraged to bring their ideas, imagination and unique personalities to the stage.</p>
           </section>
           <section>
@@ -33,11 +33,11 @@ export default function TheatrePage() {
           </section>
           <section>
             <h2>The Next <em>Chapter</em></h2>
-            <p>Plans are underway to give young performers opportunities in short films and the entertainment industry. These future opportunities build on All Play’s commitment to nurturing talent, confidence and a lasting love of the performing arts.</p>
+            <p>All Play Productions has ventured into filmmaking with Bol Bol Raani, Itta Itta Aani, in association with Atharva University, Mumbai. Written and directed by Varshaa Raane, the film brings talent nurtured through theatre to the screen, with support from the university and Atharva School of Filmmaking.</p>
             <p>Contact us to learn about available programs and upcoming opportunities.</p>
           </section>
           <div className="button-row">
-            <a className="button" href="/#contact">Enquire About Programs &rarr;</a>
+            <a className="button" href="/contact">Enquire About Programs &rarr;</a>
             <a className="text-link" href="/founder">Meet Our Founder &rarr;</a>
           </div>
         </div>

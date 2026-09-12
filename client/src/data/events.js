@@ -1,11 +1,11 @@
 export const events = [
   {
     id: "outreach",
-    title: "Over 500 Children Empowered",
+    title: "Over 600 Young People Trained",
     date: "Community outreach",
     category: "Our impact",
     description: "Drama and performing arts reaching children in Gorai, Manori and Borivali schools.",
-    highlights: "Our outreach has empowered over 500 children, including children from tribal areas. The leaflet records Season 1 in Gorai in 2020, Season 2 in Manori in 2021, and Season 3 in Borivali schools in 2022?23. Hands-on learning encourages imagination, confidence and artistic expression.",
+    highlights: "All Play has trained over 600 children and young people, including rural and tribal children, and created more than 50 productions. The leaflet records Season 1 in Gorai in 2020, Season 2 in Manori in 2021, and Season 3 in Borivali schools in 2022-23, followed by Season 4 in Borivali schools and colleges in 2024. Hands-on learning encourages imagination, confidence and artistic expression.",
   },
   {
     id: "productions",
@@ -13,7 +13,7 @@ export const events = [
     date: "Production highlights",
     category: "On stage",
     description: "Kshitijachya Palikade, Ghonga Basant, Mi Nahi Janaar Shalela and Deva Shree Ganesha.",
-    highlights: "All Play?s in-house productions include Kshitijachya Palikade, Ghonga Basant, Mi Nahi Janaar Shalela and Deva Shree Ganesha. These productions give young performers opportunities to explore their imagination and express themselves through theatre.",
+    highlights: "All Play's in-house productions include Kshitijachya Palikade, Ghonga Basant, Mi Nahi Janaar Shalela and Deva Shree Ganesha. These productions give young performers opportunities to explore their imagination and express themselves through theatre.",
   },
   {
     id: "platforms",
@@ -21,7 +21,7 @@ export const events = [
     date: "Performance highlights",
     category: "Platform exposure",
     description: "Participation in Maharashtra Rajya Balnatya Spardha and the international virtual competition Jhankriti.",
-    highlights: "The leaflet records participation in Maharashtra Rajya Balnatya Spardha for three consecutive years and in Jhankriti, an international virtual competition organised by Sri Sri Ravi Shankar. Children also performed the street play Ek Itihaas in and around Borivali for India?s 75th Independence Day.",
+    highlights: "The leaflet records participation in Maharashtra Rajya Balnatya Spardha for three consecutive years and in Jhankriti, an international virtual competition organised by Sri Sri Ravi Shankar. Children also performed the street play Ek Itihaas in and around Borivali for India's 75th Independence Day.",
   },
   {
     id: "industry",

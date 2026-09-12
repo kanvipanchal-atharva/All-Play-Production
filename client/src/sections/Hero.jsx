@@ -5,7 +5,7 @@ export default function Hero() {
     <section id="home" className="hero">
       <img
         className="hero-art"
-        src="/playful-children.png"
+        src="/hero.png"
         width="1536"
         height="1024"
         alt="Watercolor illustration of children dancing, playing theatre and flying colorful kites"
@@ -27,8 +27,8 @@ export default function Hero() {
           voice and discover the joy of performance.
         </p>
         <div className="button-row">
-          <PrimaryButton href="#programs">Explore Our Programs</PrimaryButton>
-          <PrimaryButton href="#contact" secondary>
+          <PrimaryButton href="/programs">Explore Our Programs</PrimaryButton>
+          <PrimaryButton href="/contact#contact" secondary>
             Enquire Now
           </PrimaryButton>
         </div>

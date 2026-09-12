@@ -16,7 +16,7 @@ export function ProgramCard({ program, onSelect }) {
         <p>{program.description}</p>
         <a
           className="text-link"
-          href="#contact"
+          href={`/contact?program=${encodeURIComponent(program.id)}#contact`}
           onClick={() => onSelect(program.id)}
         >
           Enquire Now <ArrowUpRight size={17} />
@@ -48,7 +48,7 @@ export function EventCard({ event, onOpen }) {
         <span className="badge">{event.category}</span>
       </div>
       <div className="card-content">
-        <p className="sample-label">SAMPLE · {event.date}</p>
+        <p className="sample-label">{event.date}</p>
         <h3>{event.title}</h3>
         <p>{event.description}</p>
         <button className="text-link" onClick={() => onOpen(event)}>

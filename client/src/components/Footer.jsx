@@ -32,7 +32,7 @@ export function ScrollToTop() {
   }, []);
   return (
     show && (
-      <a className="scroll-top" href={navigationHref("home")} aria-label="Scroll to top">
+      <a className="scroll-top" href="#main" aria-label="Scroll to top">
         <ArrowUp size={20} />
       </a>
     )
@@ -106,7 +106,7 @@ export default function Footer({ onPolicy, onSelect }) {
           {programs.map((program) => (
             <a
               key={program.id}
-              href={window.location.pathname === "/" ? "#contact" : `/?program=${program.id}#contact`}
+              href={`/contact?program=${encodeURIComponent(program.id)}#contact`}
               onClick={() => onSelect(program.id)}
             >
               {program.title}

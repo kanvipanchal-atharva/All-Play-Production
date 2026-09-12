@@ -12,8 +12,7 @@ export const navigation = [
   ["contact", "Contact"],
 ];
 export function navigationHref(id) {
-  if (id === "founder" || id === "about-theatre") return `/${id}`;
-  return `${window.location.pathname === "/" ? "" : "/"}#${id}`;
+  return id === "home" ? "/" : `/${id}`;
 }
 export function Logo() {
   return (
@@ -43,27 +42,13 @@ export function MobileMenu({ onClose }) {
 }
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 35);
     update();
     window.addEventListener("scroll", update, { passive: true });
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
-      },
-      { rootMargin: "-15% 0px -60% 0px" },
-    );
-    navigation.forEach(([id]) => {
-      const element = document.getElementById(id);
-      if (element) observer.observe(element);
-    });
     return () => {
       window.removeEventListener("scroll", update);
-      observer.disconnect();
     };
   }, []);
   return (
@@ -76,7 +61,7 @@ export default function Header() {
               <a
                 key={id}
                 href={navigationHref(id)}
-                aria-current={window.location.pathname === `/${id}` ? "page" : window.location.pathname === "/" && active === id ? "location" : undefined}
+                aria-current={(window.location.pathname.replace(/\/$/, "") || "/") === navigationHref(id) ? "page" : undefined}
               >
                 {label}
               </a>

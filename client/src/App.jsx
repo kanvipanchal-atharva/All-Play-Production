@@ -13,19 +13,40 @@ import FuturePlans from "./sections/FuturePlans";
 import FounderPage from "./pages/FounderPage";
 import TheatrePage from "./pages/TheatrePage";
 import DoodleRail from "./components/Doodles";
+const pageTitles = {
+  "/founder": "Our Founder",
+  "/about-theatre": "About the Theatre",
+  "/programs": "Our Programs",
+  "/why-theatre": "Why Theatre?",
+  "/performances": "Performances",
+  "/gallery": "Gallery",
+  "/contact": "Contact",
+};
+function ContentPage({ title, children }) {
+  return <article className="content-page">
+    <div className="container content-page-intro"><h1>{title}</h1></div>
+    {children}
+  </article>;
+}
 export default function App() {
   const [selectedProgram, setSelectedProgram] = useState(new URLSearchParams(window.location.search).get("program") || "");
   const [policy, setPolicy] = useState(null);
   const page = window.location.pathname.replace(/\/$/, "");
   useEffect(() => {
-    document.title = page === "/founder" ? "Our Founder | All Play Productions" : page === "/about-theatre" ? "About the Theatre | All Play Productions" : "All Play Productions | Theatre and Drama Training";
+    document.title = pageTitles[page] ? `${pageTitles[page]} | All Play Productions` : "All Play Productions | Theatre and Drama Training";
   }, [page]);
   return (
     <MotionConfig reducedMotion="user">
       <Header />
       <DoodleRail />
       <main id="main">
-        {page === "/founder" ? <FounderPage /> : page === "/about-theatre" ? <TheatrePage /> : <>
+        {page === "/founder" ? <FounderPage /> : page === "/about-theatre" ? <TheatrePage /> : pageTitles[page] ? <ContentPage title={pageTitles[page]}>
+          {page === "/programs" && <Programs onSelect={setSelectedProgram} />}
+          {page === "/why-theatre" && <WhyTheatre />}
+          {page === "/performances" && <Community section="performances" />}
+          {page === "/gallery" && <Community section="gallery" />}
+          {page === "/contact" && <Contact selectedProgram={selectedProgram} onSelect={setSelectedProgram} />}
+        </ContentPage> : <>
         <Hero />
         <div className="values-strip" aria-label="Our approach">
           <span>IMAGINATION</span>

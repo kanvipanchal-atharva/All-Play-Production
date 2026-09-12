@@ -11,7 +11,7 @@ export default function WhyTheatre() {
           </SectionHeading>
           <p>
             A supportive space to express ideas, understand emotions and work
-            together. Skills that stay with you long after the curtain falls.
+            together. Skills that stay with you long after the curtain falls. Through hands-on drama, children explore their individuality, think creatively and solve problems in real time. Every child matters, and every unique voice deserves to be heard.
           </p>
           <div className="skills-list">
             {[
@@ -20,7 +20,7 @@ export default function WhyTheatre() {
               "Creativity",
               "Emotional awareness",
               "Teamwork",
-              "Discipline",
+              "Discipline", "Critical thinking", "Self-discovery",
             ].map((skill, index) => (
               <span key={skill}>
                 <small>0{index + 1}</small>
