@@ -95,7 +95,7 @@ h1, h2, h3 { font-family: 'Trebuchet MS', 'Arial Rounded MT Bold', var(--font-sa
 h1 em, h2 em { font-family: var(--font-display); font-weight: 600; }
 .hero h1 { max-width: 720px; font-size: clamp(3.2rem, 5.3vw, 5rem); }
 .hero-art { object-position: 78% center; }
-.hero-shade { background: linear-gradient(90deg, #f5eee6fa 0%, #f5eee6ed 30%, #f5eee68c 48%, #f5eee600 72%); }
+.hero-shade { background: linear-gradient(90deg, #f5eee6e6 0%, #f5eee6c2 30%, #f5eee65c 48%, #f5eee600 72%); }
 .hero h1 em { text-decoration: underline; text-decoration-color: var(--peach); text-decoration-thickness: 7px; text-underline-offset: 9px; }
 .button, .header-cta { border-radius: 24px 20px 25px 18px; box-shadow: 2px 3px 0 #74475924; }
 .values-strip { border-block: 2px dashed #8b354935; }
