@@ -1,9 +1,15 @@
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, Instagram } from "lucide-react";
-import { events, gallery, contact } from "../data";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { events, gallery } from "../data";
 import { SectionHeading, Artwork } from "../components/UI";
 import { EventCard, GalleryItem } from "../components/Cards";
 import Modal from "../components/Modal";
+const productionPosters = [
+  { src: "/documents/shriGanesha.jpeg", title: "देवा श्री गणेशा" },
+  { src: "/documents/school.png", title: "मी नाही जाणार शाळेला" },
+  { src: "/documents/kshitija.jpeg", title: "क्षितिजाच्या पलिकडे" },
+  { src: "/documents/ghongaBasant.jpeg", title: "घोंघा बसन्त" },
+];
 export default function Community({ section }) {
   const [event, setEvent] = useState(null);
   const [index, setIndex] = useState(null);
@@ -33,6 +39,15 @@ export default function Community({ section }) {
               Theatre, outreach and film
             </span>
           </div>
+          {productionPosters.map((poster) => (
+            <div className="film-feature" key={poster.src}>
+              <img src={poster.src} alt={`${poster.title} production poster`} loading="lazy" />
+              <div>
+                <h2>{poster.title}</h2>
+                <p>Dummy description for {poster.title}. Details about this production will be added soon.</p>
+              </div>
+            </div>
+          ))}
           <div className="film-feature">
             <img src="/documents/bol-bol-raani-1.png" alt="Bol Bol Raani, Itta Itta Aani film poster" loading="lazy" />
             <div>
@@ -70,14 +85,7 @@ export default function Community({ section }) {
             >
               Moments from <em>All Play</em>
             </SectionHeading>
-            <a
-              className="social-link"
-              href={contact.instagram}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Instagram size={19} /> @allplayproductions ↗
-            </a>
+            
           </div>
           <div className="gallery-grid">
             {gallery.map((item, itemIndex) => (
@@ -91,17 +99,7 @@ export default function Community({ section }) {
               />
             ))}
           </div>
-          <div className="center">
-            <a
-              className="button button-light"
-              href={contact.instagram}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Instagram size={18} />
-              Follow @allplayproductions
-            </a>
-          </div>
+          
         </div>
       </section>}
       {event && (
@@ -121,7 +119,8 @@ export default function Community({ section }) {
       )}
       {index !== null && (
         <Modal
-          title={gallery[index].title}
+          title={gallery[index].images[photoIndex].title || gallery[index].title}
+          className="gallery-modal"
           onClose={() => setIndex(null)}
           onPrevious={previous}
           onNext={next}
@@ -140,7 +139,7 @@ export default function Community({ section }) {
               <ArrowLeft />
             </button>
             <span aria-live="polite">
-              {photoIndex + 1} / {gallery[index].images.length} {" � "} {gallery[index].title}
+              {photoIndex + 1} / {gallery[index].images.length} {" · "} {gallery[index].images[photoIndex].title || gallery[index].title}
             </span>
             <button
               className="icon-button"
@@ -155,5 +154,6 @@ export default function Community({ section }) {
     </>
   );
 }
+
 
 

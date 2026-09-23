@@ -1,6 +1,5 @@
-import { Check, Instagram } from "lucide-react";
+import { Check } from "lucide-react";
 import { Artwork, Reveal, SectionHeading } from "../components/UI";
-import { contact } from "../data";
 import { Doodle } from "../components/Doodles";
 export default function About() {
   return (
@@ -36,7 +35,7 @@ export default function About() {
               build self-esteem and find the courage to share their unique
               voices with the world.
             </p>
-            <a className="text-link section-read-more" href="/about-theatre">Read more about the theatre &rarr;</a>
+            <a className="text-link section-read-more" href="/why-theatre">Read more about the theatre &rarr;</a>
             <div className="highlights">
               {[
                 "Structured Training",
@@ -83,14 +82,6 @@ export default function About() {
             </p>
             <div className="founder-bottom">
               <a className="text-link" href="/founder">Read more about our founder &rarr;</a>
-              <a
-                href={contact.founderInstagram}
-                className="text-link"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Instagram size={18} /> View on Instagram
-              </a>
             </div>
           </Reveal>
         </div>

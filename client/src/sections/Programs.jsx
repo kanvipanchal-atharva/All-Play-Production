@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { ArrowUpRight, Drama } from "lucide-react";
 import { SectionHeading, Reveal } from "../components/UI";
 import { ProgramCard, LearningCard } from "../components/Cards";
-import { programs, batch, learning } from "../data";
+import { programs, learning } from "../data";
 const featuredPrograms = [
   {
     id: "school-of-drama-theatre",
@@ -94,21 +93,7 @@ export default function Programs({ onSelect }) {
               </Reveal>
             ))}
           </div>
-          <p><a className="text-link" href="/documents/all-play-leaflet.pdf" target="_blank" rel="noreferrer">Explore our theatre leaflet (PDF) &rarr;</a></p>
-          <div className="batch-panel">
-            <Drama size={35} strokeWidth={1.3} />
-            <div>
-              <h3>{batch.title}</h3>
-              <p>
-                {batch.duration} · {batch.sessions}
-              </p>
-              <p>{batch.ages}</p>
-              <small>{batch.notice}</small>
-            </div>
-            <a href="/contact#contact" className="text-link">
-              Ask About the Batch <ArrowUpRight size={18} />
-            </a>
-          </div>
+          <p><a className="text-link" href="/documents/all-play-leaflet.pdf" target="_blank" rel="noreferrer">Explore our theatre (PDF) &rarr;</a></p>
         </div>
       </section>
       <section className="section school-outreach-section">

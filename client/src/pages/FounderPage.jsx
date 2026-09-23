@@ -39,7 +39,6 @@ export default function FounderPage() {
             <p>Through her leadership and creative work, she continues to share Indian culture, arts and values while inspiring confidence and creativity in the next generation.</p>
           </section>
           <p>Her creative ambitions include film festivals and future feature film, television and web series productions.</p><a className="text-link" href="/performances">Explore her theatre and film work &rarr;</a>
-          <a className="button" href="/about-theatre">Discover All Play &rarr;</a>
         </div>
       </div>
     </article>

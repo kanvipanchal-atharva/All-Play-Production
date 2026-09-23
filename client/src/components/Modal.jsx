@@ -7,6 +7,7 @@ export default function Modal({
   children,
   onPrevious,
   onNext,
+  className = "",
 }) {
   const ref = useRef(null);
   useEffect(() => {
@@ -50,7 +51,7 @@ export default function Modal({
   return createPortal(
     <dialog
       ref={ref}
-      className="modal"
+      className={`modal ${className}`}
       aria-labelledby="modal-title"
       onCancel={(event) => {
         event.preventDefault();

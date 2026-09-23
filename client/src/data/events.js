@@ -41,6 +41,6 @@ export const events = [
   },
 ].map((event) => ({
   ...event,
-  image: "/Demo.jpeg",
-  images: ["/Demo.jpeg"],
+  image: event.image || "/Demo.jpeg",
+  images: event.images || ["/Demo.jpeg"],
 }));

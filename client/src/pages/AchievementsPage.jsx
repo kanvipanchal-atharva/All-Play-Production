@@ -5,7 +5,7 @@ export default function AchievementsPage() {
         <div className="achievements-layout">
           <img
             className="achievements-photo"
-            src="/Founder.jpeg"
+            src="/documents/award.png"
             width="959"
             height="1280"
             alt="Mrs. Varsha Rane, Founder and Creator of All Play Productions"

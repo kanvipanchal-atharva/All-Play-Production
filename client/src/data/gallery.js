@@ -34,14 +34,55 @@ export const gallery = [
     "title": "A Carnival of Joy",
     "images": [
       { "src": "/documents/carnival-of-joy.jpeg", "alt": "All Play mission in Marathi and English with theatre contact details" },
-      { "src": "/documents/IMG_2140.JPG", "alt": "All Play Carnival of Joy photo 1" },
-      { "src": "/documents/IMG_2150.JPG", "alt": "All Play Carnival of Joy photo 2" },
-      { "src": "/documents/IMG_2197.JPG", "alt": "All Play Carnival of Joy photo 3" },
-      { "src": "/documents/IMG_2212.JPG", "alt": "All Play Carnival of Joy photo 4" },
-      { "src": "/documents/IMG_4347.JPG", "alt": "All Play Carnival of Joy photo 5" },
-      { "src": "/documents/IMG_5192.JPG", "alt": "All Play Carnival of Joy photo 6" },
-      { "src": "/documents/IMG_5281.JPG", "alt": "All Play Carnival of Joy photo 7" },
-      { "src": "/documents/IMG_5307.JPG", "alt": "All Play Carnival of Joy photo 8" }
+      { "src": "/documents/IMG_2140.JPG", "alt": "All Play Carnival of Joy photo 1", "title": "A Carnival of Joy - Season 1" },
+      { "src": "/documents/IMG_2150.JPG", "alt": "All Play Carnival of Joy photo 2", "title": "A Carnival of Joy - Season 1" },
+      { "src": "/documents/IMG_2197.JPG", "alt": "All Play Carnival of Joy photo 3", "title": "A Carnival of Joy - Season 1" },
+      { "src": "/documents/IMG_2212.JPG", "alt": "All Play Carnival of Joy photo 4", "title": "A Carnival of Joy - Season 1" },
+      { "src": "/documents/IMG_4347.JPG", "alt": "All Play Carnival of Joy photo 5", "title": "A Carnival of Joy - Season 1" },
+      { "src": "/documents/IMG_5192.JPG", "alt": "All Play Carnival of Joy photo 6", "title": "A Carnival of Joy - Season 1" },
+      { "src": "/documents/IMG_5281.JPG", "alt": "All Play Carnival of Joy photo 7", "title": "A Carnival of Joy - Season 1" },
+      { "src": "/documents/IMG_5307.JPG", "alt": "All Play Carnival of Joy photo 8", "title": "A Carnival of Joy - Season 1" },
+      { "src": "/documents/IMG_0179.JPG", "alt": "All Play Carnival of Joy Season 2 photo 1", "title": "A Carnival of Joy - Season 2" },
+      { "src": "/documents/ARYA1375.JPG", "alt": "All Play Carnival of Joy Season 2 photo 2", "title": "A Carnival of Joy - Season 2" },
+      { "src": "/documents/7W2A0674.JPG", "alt": "All Play Carnival of Joy Season 2 photo 3", "title": "A Carnival of Joy - Season 2" },
+      { "src": "/documents/7W2A0732.JPG", "alt": "All Play Carnival of Joy Season 2 photo 4", "title": "A Carnival of Joy - Season 2" },
+      { "src": "/documents/7W2A1011.JPG", "alt": "All Play Carnival of Joy Season 2 photo 5", "title": "A Carnival of Joy - Season 2" },
+      { "src": "/documents/7W2A1241.JPG", "alt": "All Play Carnival of Joy Season 2 photo 6", "title": "A Carnival of Joy - Season 2" },
+      { "src": "/documents/7W2A2972.JPG", "alt": "All Play Carnival of Joy Season 2 photo 7", "title": "A Carnival of Joy - Season 2" },
+      { "src": "/documents/7W2A8403.JPG", "alt": "All Play Carnival of Joy Season 2 photo 8", "title": "A Carnival of Joy - Season 2" },
+      { "src": "/documents/A_carnival3.JPG", "alt": "All Play Carnival of Joy Season 3 photo 1", "title": "A Carnival of Joy - Season 3" },
+      { "src": "/documents/B_carnival3.JPG", "alt": "All Play Carnival of Joy Season 3 photo 2", "title": "A Carnival of Joy - Season 3" },
+      { "src": "/documents/C_carnival3.JPG", "alt": "All Play Carnival of Joy Season 3 photo 3", "title": "A Carnival of Joy - Season 3" },
+      { "src": "/documents/D_carnival3.JPG", "alt": "All Play Carnival of Joy Season 3 photo 4", "title": "A Carnival of Joy - Season 3" },
+      { "src": "/documents/E_carnival3.JPG", "alt": "All Play Carnival of Joy Season 3 photo 5", "title": "A Carnival of Joy - Season 3" }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Independence Day 2023",
+    "images": [
+      { "src": "/documents/ind_borivali1.JPG", "alt": "Independence Day 2023 at Borivali Station photo 1", "title": "Independence Day 2023 - Borivali Station" },
+      { "src": "/documents/ind_borivali2.JPG", "alt": "Independence Day 2023 at Borivali Station photo 2", "title": "Independence Day 2023 - Borivali Station" },
+      { "src": "/documents/ind_borivali3.JPG", "alt": "Independence Day 2023 at Borivali Station photo 3", "title": "Independence Day 2023 - Borivali Station" },
+      { "src": "/documents/ind_borivali4.JPG", "alt": "Independence Day 2023 at Borivali Station photo 4", "title": "Independence Day 2023 - Borivali Station" },
+      { "src": "/documents/ind_manori1.JPG", "alt": "Independence Day 2023 in Manori photo 1", "title": "Independence Day 2023 - Manori" },
+      { "src": "/documents/ind_manori2.JPG", "alt": "Independence Day 2023 in Manori photo 2", "title": "Independence Day 2023 - Manori" },
+      { "src": "/documents/ind_manori3.JPG", "alt": "Independence Day 2023 in Manori photo 3", "title": "Independence Day 2023 - Manori" },
+      { "src": "/documents/ind_manori4.JPG", "alt": "Independence Day 2023 in Manori photo 4", "title": "Independence Day 2023 - Manori" },
+      { "src": "/documents/ind_shimpoli1.JPG", "alt": "Independence Day 2023 in Shimpoli photo 1", "title": "Independence Day 2023 - Shimpoli" },
+      { "src": "/documents/ind_shimpoli2.JPG", "alt": "Independence Day 2023 in Shimpoli photo 2", "title": "Independence Day 2023 - Shimpoli" },
+      { "src": "/documents/ind_shimpoli3.JPG", "alt": "Independence Day 2023 in Shimpoli photo 3", "title": "Independence Day 2023 - Shimpoli" },
+      { "src": "/documents/ind_shimpoli4.JPG", "alt": "Independence Day 2023 in Shimpoli photo 4", "title": "Independence Day 2023 - Shimpoli" }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Atharva University Mumbai Auditorium",
+    "images": [
+      { "src": "/documents/audi1.JPG", "alt": "Atharva University Mumbai auditorium photo 1" },
+      { "src": "/documents/audi2.JPG", "alt": "Atharva University Mumbai auditorium photo 2" },
+      { "src": "/documents/audi6.jpg", "alt": "Atharva University Mumbai auditorium photo 4" }
     ]
   }
 ];
+

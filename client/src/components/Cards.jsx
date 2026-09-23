@@ -43,7 +43,7 @@ export function EventCard({ event, onOpen }) {
       <div className="card-image">
         <Artwork
           src={event.image}
-          alt="Children performing together on stage at All Play Productions"
+          alt={event.imageAlt || "Children performing together on stage at All Play Productions"}
         />
         <span className="badge">{event.category}</span>
       </div>
