@@ -7,10 +7,15 @@ import Modal from "../components/Modal";
 export default function Community({ section }) {
   const [event, setEvent] = useState(null);
   const [index, setIndex] = useState(null);
+  const [photoIndex, setPhotoIndex] = useState(0);
   const [expanded, setExpanded] = useState(false);
   const previous = () =>
-    setIndex((value) => (value + gallery.length - 1) % gallery.length);
-  const next = () => setIndex((value) => (value + 1) % gallery.length);
+    setPhotoIndex((value) => {
+      const count = gallery[index].images.length;
+      return (value + count - 1) % count;
+    });
+  const next = () =>
+    setPhotoIndex((value) => (value + 1) % gallery[index].images.length);
   return (
     <>
       {section !== "gallery" && <section id="performances" className="section">
@@ -79,7 +84,10 @@ export default function Community({ section }) {
               <GalleryItem
                 key={item.id}
                 item={item}
-                onOpen={() => setIndex(itemIndex)}
+                onOpen={() => {
+                  setPhotoIndex(0);
+                  setIndex(itemIndex);
+                }}
               />
             ))}
           </div>
@@ -118,7 +126,11 @@ export default function Community({ section }) {
           onPrevious={previous}
           onNext={next}
         >
-          <Artwork src={gallery[index].src} alt={gallery[index].alt} eager />
+          <Artwork
+            src={gallery[index].images[photoIndex].src}
+            alt={gallery[index].images[photoIndex].alt}
+            eager
+          />
           <div className="lightbox-controls">
             <button
               className="icon-button"
@@ -128,7 +140,7 @@ export default function Community({ section }) {
               <ArrowLeft />
             </button>
             <span aria-live="polite">
-              {index + 1} / {gallery.length} Â· All Play on stage
+              {photoIndex + 1} / {gallery[index].images.length} {" · "} {gallery[index].title}
             </span>
             <button
               className="icon-button"
@@ -143,3 +155,5 @@ export default function Community({ section }) {
     </>
   );
 }
+
+

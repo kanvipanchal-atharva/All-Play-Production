@@ -9,7 +9,7 @@ export default function FounderPage() {
             <p className="profile-lead">Founder, creator and a champion of young voices.</p>
             <p>A visionary and changemaker, Mrs. Varsha Rane empowers youth and children through drama and theatre. By creating inclusive platforms for rural and tribal children across Maharashtra, she nurtures confidence, personality development and fearless creative expression.</p>
           </div>
-          <img src="/Founder.jpeg" width="1170" height="1463" alt="Mrs. Varsha Rane, Founder and Creator of All Play Productions" />
+          <img src="/founder-varsha-rane.jpeg" width="959" height="1280" alt="Mrs. Varsha Rane, Founder and Creator of All Play Productions" />
         </div>
         <div className="profile-body">
           <section>

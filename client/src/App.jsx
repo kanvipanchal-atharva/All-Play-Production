@@ -12,6 +12,7 @@ import Contact from "./sections/Contact";
 import FuturePlans from "./sections/FuturePlans";
 import FounderPage from "./pages/FounderPage";
 import TheatrePage from "./pages/TheatrePage";
+import AchievementsPage from "./pages/AchievementsPage";
 import DoodleRail from "./components/Doodles";
 const pageTitles = {
   "/founder": "Our Founder",
@@ -40,9 +41,11 @@ export default function App() {
       <Header />
       <DoodleRail />
       <main id="main">
-        {page === "/founder" ? <FounderPage /> : page === "/about-theatre" ? <TheatrePage /> : pageTitles[page] ? <ContentPage title={pageTitles[page]}>
+        {page === "/founder" ? <FounderPage /> : page === "/about-theatre" ? <AchievementsPage /> : page === "/why-theatre" ? <>
+          <TheatrePage />
+          <WhyTheatre />
+        </> : pageTitles[page] ? <ContentPage title={pageTitles[page]}>
           {page === "/programs" && <Programs onSelect={setSelectedProgram} />}
-          {page === "/why-theatre" && <WhyTheatre />}
           {page === "/performances" && <Community section="performances" />}
           {page === "/gallery" && <Community section="gallery" />}
           {page === "/contact" && <Contact selectedProgram={selectedProgram} onSelect={setSelectedProgram} />}

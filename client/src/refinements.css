@@ -1,5 +1,20 @@
 /* Editorial refinement: shorter sections, quieter decoration, readable copy. */
 .section-read-more { margin-top: 20px; }
+.featured-programs-section { padding-bottom: 0; }
+.featured-programs-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.featured-program-card { display: flex; width: 100%; min-height: 190px; flex-direction: column; align-items: flex-start; justify-content: space-between; padding: 26px; color: inherit; font: inherit; text-align: left; cursor: pointer; background: #fff9f1; border: 2px solid var(--border); border-radius: 23px 18px 26px 19px; transition: transform .2s ease, box-shadow .2s ease; }
+.featured-program-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px #49361a10; }
+.featured-program-card h2 { font-size: clamp(22px, 2.3vw, 30px); }
+.featured-program-card .eyebrow { margin-bottom: 0; }
+.featured-program-descriptions { display: grid; gap: 18px; margin-top: 32px; }
+.featured-program-description { scroll-margin-top: 100px; padding: 24px 28px; background: #f6efea; border-left: 4px solid var(--maroon); }
+.featured-program-description h2 { font-size: clamp(24px, 2.7vw, 34px); margin-bottom: 10px; }
+.featured-program-description p { margin: 0; }
+.drama-course-details { display: grid; gap: 12px; }
+.drama-course-details h3 { font-size: 22px; margin: 4px 0 0; }
+.drama-course-details ul { display: grid; gap: 8px; margin: 0; padding-left: 22px; }
+.drama-course-details a { color: var(--maroon); }
+.drama-course-details .drama-course-motto { color: var(--maroon); font-weight: 700; }
 .founder-bottom { flex-wrap: wrap; }
 .profile-page { padding: 130px 0 72px; }
 .profile-intro { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: 64px; align-items: center; margin: 36px 0 56px; }
@@ -8,13 +23,24 @@
 .profile-intro img { width: 100%; height: auto; border-radius: 4px; }
 .profile-intro .profile-lead { color: var(--maroon); margin-bottom: 18px; }
 .profile-body { max-width: none; margin-inline: 0; }
+.achievements-layout { display: grid; grid-template-columns: minmax(0, .65fr) minmax(0, 1fr); gap: 64px; align-items: center; }
+.achievements-photo { display: block; width: min(100%, 520px); height: auto; margin: 0 auto; border-radius: 4px; }
+.achievement-card { padding: 40px; background: #fff9f1; border: 2px solid var(--border); border-radius: 23px 18px 26px 19px; }
+.achievement-card h1 { font-size: clamp(34px, 4vw, 56px); margin-bottom: 22px; }
+.achievement-card h1 em { color: var(--maroon); }
 .profile-body section { margin-bottom: 40px; }
 .profile-body h2 { font-size: clamp(27px, 3vw, 38px); margin-bottom: 20px; }
 .theatre-page .profile-intro { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .theatre-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; padding: 28px; margin-bottom: 48px; background: #f6efea; text-align: center; }
 .theatre-stats strong { font-family: var(--font-display); font-size: 42px; color: var(--maroon); }
 @media (max-width: 767px) {
+  .featured-programs-grid { grid-template-columns: 1fr; gap: 14px; }
+  .featured-program-card { min-height: 145px; padding: 20px; }
+  .featured-program-descriptions { margin-top: 22px; }
+  .featured-program-description { padding: 20px; }
   .profile-page { padding: 108px 0 48px; }
+  .achievements-layout { grid-template-columns: 1fr; gap: 28px; }
+  .achievement-card { padding: 28px 22px; }
   .profile-intro, .theatre-page .profile-intro { grid-template-columns: minmax(0, 1fr); gap: 28px; margin: 28px 0 36px; }
   .profile-intro img { max-width: 340px; margin-inline: auto; }
   .theatre-page .profile-intro img { max-width: none; }

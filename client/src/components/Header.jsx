@@ -3,11 +3,11 @@ import { Menu, X } from "lucide-react";
 import Modal from "./Modal";
 export const navigation = [
   ["home", "Home"],
-  ["about-theatre", "About the Theatre"],
   ["founder", "Founder"],
-  ["programs", "Our Programs"],
   ["why-theatre", "Why Theatre?"],
+  ["programs", "Our Programs"],
   ["performances", "Performances"],
+  ["about-theatre", "Achievements"],
   ["gallery", "Gallery"],
   ["contact", "Contact"],
 ];

@@ -65,7 +65,7 @@ export function GalleryItem({ item, onOpen }) {
       onClick={onOpen}
       aria-label={`View ${item.title}`}
     >
-      <Artwork src={item.src} alt={item.alt} />
+      <Artwork src={item.images[0].src} alt={item.images[0].alt} />
       <span className="gallery-overlay">
         <Instagram size={23} />
         <span>
