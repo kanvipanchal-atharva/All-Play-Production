@@ -1,11 +1,10 @@
-import { MapPin, Mail, Phone, Clock, Instagram } from "lucide-react";
+import { MapPin, Mail, Phone, Instagram, Facebook, Youtube } from "lucide-react";
 import { SectionHeading, PrimaryButton } from "../components/UI";
 import EnquiryForm from "../components/EnquiryForm";
 import { contact, whatsappUrl } from "../data";
 import { Doodle } from "../components/Doodles";
-export default function Contact({ selectedProgram, onSelect }) {
+export function ContactCallToAction() {
   return (
-    <>
       <section className="cta-section">
         <Doodle kind="masks" className="cta-doodle" />
         <div className="container">
@@ -29,6 +28,11 @@ export default function Contact({ selectedProgram, onSelect }) {
           )}
         </div>
       </section>
+  );
+}
+export default function Contact({ selectedProgram, onSelect }) {
+  return (
+    <>
       <section id="contact" className="section contact-section">
         <div className="container contact-layout">
           <div>
@@ -55,7 +59,6 @@ export default function Contact({ selectedProgram, onSelect }) {
                   contact.email ? `mailto:${contact.email}` : null,
                 ],
                 [MapPin, "Training Venue", contact.venue],
-                [Clock, "Session Timings", contact.timings],
               ].map(([Icon, label, value, href]) => (
                 <div key={label}>
                   <Icon size={21} strokeWidth={1.4} />
@@ -79,14 +82,17 @@ export default function Contact({ selectedProgram, onSelect }) {
               <h3>Film enquiries</h3><p>Bol Bol Raani, Itta Itta Aani</p>
               {contact.filmPhones.map(phone => <a key={phone} href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a>)}
             </div>
-            <a
-              className="social-link"
-              href={contact.instagram}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Instagram size={20} /> Follow our creative journey ↗
-            </a>
+            <div className="contact-social-links" aria-label="Social media">
+              <a className="social-link" href={contact.instagram} target="_blank" rel="noreferrer">
+                <Instagram size={20} /> Instagram
+              </a>
+              <a className="social-link" href={contact.facebook} target="_blank" rel="noreferrer">
+                <Facebook size={20} /> Facebook
+              </a>
+              <a className="social-link" href={contact.youtube} target="_blank" rel="noreferrer">
+                <Youtube size={20} /> YouTube
+              </a>
+            </div>
           </div>
           <EnquiryForm selectedProgram={selectedProgram} onSelect={onSelect} />
         </div>

@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="container hero-content">
         <p className="eyebrow">
           <span />
-          Drama · Theatre · Performing Arts
+          Drama · Theatre · Cinema · Performing Arts
         </p>
         <h1>
           Discover the

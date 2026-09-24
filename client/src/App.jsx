@@ -8,7 +8,7 @@ import About from "./sections/About";
 import Programs from "./sections/Programs";
 import WhyTheatre from "./sections/WhyTheatre";
 import Community from "./sections/Community";
-import Contact from "./sections/Contact";
+import Contact, { ContactCallToAction } from "./sections/Contact";
 import FuturePlans from "./sections/FuturePlans";
 import FounderPage from "./pages/FounderPage";
 import TheatrePage from "./pages/TheatrePage";
@@ -23,9 +23,12 @@ const pageTitles = {
   "/gallery": "Gallery",
   "/contact": "Contact",
 };
-function ContentPage({ title, children }) {
-  return <article className="content-page">
-    <div className="container content-page-intro"><h1>{title}</h1></div>
+function ContentPage({ title, children, className = "" }) {
+  const hidePageTitle = ["Our Programs", "Performances", "Contact"].includes(title);
+  return <article className={`content-page ${className}`}>
+    {title !== "Gallery" && !hidePageTitle && <div className="container content-page-intro">
+      {!hidePageTitle && <h1>{title}</h1>}
+    </div>}
     {children}
   </article>;
 }
@@ -44,7 +47,7 @@ export default function App() {
         {page === "/founder" ? <FounderPage /> : page === "/about-theatre" ? <AchievementsPage /> : page === "/why-theatre" ? <>
           <TheatrePage />
           <WhyTheatre />
-        </> : pageTitles[page] ? <ContentPage title={pageTitles[page]}>
+        </> : pageTitles[page] ? <ContentPage title={pageTitles[page]} className={page === "/programs" ? "programs-page" : page === "/gallery" ? "gallery-page" : page === "/contact" ? "contact-page" : ""}>
           {page === "/programs" && <Programs onSelect={setSelectedProgram} />}
           {page === "/performances" && <Community section="performances" />}
           {page === "/gallery" && <Community section="gallery" />}
@@ -65,12 +68,9 @@ export default function App() {
         <About />
         <Programs onSelect={setSelectedProgram} />
         <WhyTheatre />
-        <Community />
+        <Community includeGallery={false} />
         <FuturePlans />
-        <Contact
-          selectedProgram={selectedProgram}
-          onSelect={setSelectedProgram}
-        />
+        <ContactCallToAction />
         </>}
       </main>
       <Footer onPolicy={setPolicy} onSelect={setSelectedProgram} />
@@ -85,8 +85,8 @@ export default function App() {
             launch.
           </p>
           <p>
-            This preview validates enquiry information without storing it or
-            sending it to the organisation. No account, analytics or advertising
+            Enquiries are emailed to the organisation and are not stored by this
+            website. No account, analytics or advertising
             cookies are used. Google Fonts and Instagram links connect to
             external providers.
           </p>

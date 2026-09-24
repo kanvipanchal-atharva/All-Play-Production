@@ -57,7 +57,7 @@ Editorial section copy is in `client/src/sections/`. Theme colours and typograph
 
 ## API behaviour
 
-`POST /api/enquiries` accepts JSON with `name`, `age` (string), `mobile`, `email`, `program`, optional `message`, and boolean `consent`.
+`POST /api/enquiries` accepts JSON with `name`, optional `parentName` and `address`, `age` (string), `mobile`, `email`, `program`, optional `message`, and boolean `consent`.
 
 ```json
 {
@@ -73,9 +73,9 @@ Editorial section copy is in `client/src/sections/`. Theme colours and typograph
 
 All required values are validated on both client and server. Indian mobile formats accept spaces, parentheses, hyphens, a leading zero or country code. Age accepts whole numbers 5–99 as a reasonable enquiry range; advertised children's and teen program ages remain 7–14 and 15–19. Names support Unicode; plain text is trimmed and control characters/angle brackets removed. Name length is 2–100 and optional message maximum is 2,000 characters.
 
-Responses consistently contain `success` and `message`, with an `errors` object on validation failures. Status codes: 200 success, 422 field validation, 400 malformed JSON, 413 oversized body, 415 unsupported content type, 403 disallowed origin, 429 rate limit. Limit: 10 requests per IP per 15 minutes; JSON body limit: 16 KB. Helmet supplies security headers. CORS uses the comma-separated `CORS_ORIGINS` environment allowlist. The built-in rate-limit memory store is appropriate to this single-process deployment; multiple replicas require a shared rate-limit store.
+Responses consistently contain `success` and `message`, with an `errors` object on validation failures. Status codes: 200 email accepted by provider, 422 field validation, 400 malformed JSON, 413 oversized body, 415 unsupported content type, 403 disallowed origin, 429 rate limit, 502 email delivery failure, and 503 missing email configuration. Limit: 10 requests per IP per 15 minutes; JSON body limit: 16 KB. Helmet supplies security headers. CORS uses the comma-separated `CORS_ORIGINS` environment allowlist. The built-in rate-limit memory store is appropriate to this single-process deployment; multiple replicas require a shared rate-limit store.
 
-**The endpoint only validates and returns success. It does not email, save, register a participant or notify anyone.** The form and response explicitly explain this. Comments in `server/app.js` mark the integration point for approved email, Google Sheets or database delivery later. Add delivery failure handling and await confirmation before claiming successful delivery. No form data is logged by the application; ensure hosting logs also exclude request bodies.
+The enquiry endpoint emails validated form details to `allplayproductionsworkshops@gmail.com` through Resend. Configure `RESEND_API_KEY` and `ENQUIRY_FROM_EMAIL` in `.env` and in the production host; the sender must belong to a domain verified with Resend. Without these values, the API returns 503 and does not claim that the enquiry was sent. The sender is kept server-side, and the visitor's email is used as `reply_to`. No form data is logged by the application; ensure hosting logs also exclude request bodies.
 
 ## Assets, metadata and launch
 

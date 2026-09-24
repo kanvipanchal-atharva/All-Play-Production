@@ -83,6 +83,34 @@ export const gallery = [
       { "src": "/documents/audi2.JPG", "alt": "Atharva University Mumbai auditorium photo 2" },
       { "src": "/documents/audi6.jpg", "alt": "Atharva University Mumbai auditorium photo 4" }
     ]
+  },
+  {
+    "id": 7,
+    "title": "Guru Pornima",
+    "images": [
+      { "src": "/documents/guru1.jpg", "alt": "Guru 1" },
+      { "src": "/documents/guru2.jpg", "alt": "Guru 2" },
+      { "src": "/documents/guru3.jpg", "alt": "Guru 3" },
+      { "src": "/documents/guru4.jpg", "alt": "Guru 4" },
+      { "src": "/documents/guru5.jpg", "alt": "Guru 5" },
+      { "src": "/documents/guru6.jpg", "alt": "Guru 6" },
+      { "src": "/documents/guru7.jpg", "alt": "Guru 7" },
+      { "src": "/documents/guru8.jpg", "alt": "Guru 8" }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Celebrity Visits",
+    "images": [
+      { "src": "/documents/MaheshKothare.jpeg", "alt": "Mahesh Kothare at All Play Productions", "title": "Celebrity Visit - Mahesh Kothare" },
+      { "src": "/documents/SachinPilgaokar1.jpeg", "alt": "Sachin Pilgaokar at All Play Productions, photo 1", "title": "Celebrity Visit - Sachin Pilgaokar" },
+      { "src": "/documents/SachinPilgaokar2.jpeg", "alt": "Sachin Pilgaokar at All Play Productions, photo 2", "title": "Celebrity Visit - Sachin Pilgaokar" },
+      { "src": "/documents/SachinPilgaokar3.jpeg", "alt": "Sachin Pilgaokar at All Play Productions, photo 3", "title": "Celebrity Visit - Sachin Pilgaokar" },
+      { "src": "/documents/SachinPilgaokar4.jpeg", "alt": "Sachin Pilgaokar at All Play Productions, photo 4", "title": "Celebrity Visit - Sachin Pilgaokar" },
+      { "src": "/documents/SachinPilgaokar5.jpeg", "alt": "Sachin Pilgaokar at All Play Productions, photo 5", "title": "Celebrity Visit - Sachin Pilgaokar" },
+      { "src": "/documents/SanjayKhapare1.JPG", "alt": "Sanjay Khapare at All Play Productions, photo 1", "title": "Celebrity Visit - Sanjay Khapare" },
+      { "src": "/documents/SanjayKhapare2.JPG", "alt": "Sanjay Khapare at All Play Productions, photo 2", "title": "Celebrity Visit - Sanjay Khapare" }
+    ]
   }
 ];
 

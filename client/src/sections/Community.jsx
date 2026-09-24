@@ -5,16 +5,54 @@ import { SectionHeading, Artwork } from "../components/UI";
 import { EventCard, GalleryItem } from "../components/Cards";
 import Modal from "../components/Modal";
 const productionPosters = [
-  { src: "/documents/shriGanesha.jpeg", title: "देवा श्री गणेशा" },
-  { src: "/documents/school.png", title: "मी नाही जाणार शाळेला" },
-  { src: "/documents/kshitija.jpeg", title: "क्षितिजाच्या पलिकडे" },
-  { src: "/documents/ghongaBasant.jpeg", title: "घोंघा बसन्त" },
+  {
+    id: "deva-shree-ganesha",
+    src: "/documents/shriGanesha.jpeg",
+    title: "देवा श्री गणेशा",
+    description: "A Marathi stage production written and directed by Varshaa Rane, presented by All Play Productions.",
+  },
+  {
+    id: "mi-nahi-janar-shalela",
+    src: "/documents/school.png",
+    title: "मी नाही जाणार शाळेला",
+    description: "A school-themed Marathi theatre production featuring young performers, presented by Atharva Foundation and All Play Productions.",
+  },
+  {
+    id: "kshitijachya-palikade",
+    src: "/documents/kshitija.jpeg",
+    title: "क्षितिजाच्या पलिकडे",
+    description: "An in-house stage production by All Play Productions, bringing young performers together through theatre.",
+  },
+  {
+    id: "ghonga-basant",
+    src: "/documents/ghongaBasant.jpeg",
+    title: "घोंगा बसन्त",
+    description: "A Marathi stage production featuring young performers from All Play Productions.",
+  },
+  {
+    id: "bol-bol-raani",
+    src: "/documents/bol-bol-raani-1.png",
+    title: "बोल बोल राणी",
+    category: "Our first short film",
+    description: "A woman with mystical powers struggles to find acceptance in a world that sees her as different. Written and directed by Varshaa Raane, the film follows her journey of resilience, self-discovery and learning to embrace who she is. It also marks her acting debut, alongside students of her School of Drama and Theatre.",
+    link: "/documents/bol-bol-raani.pdf",
+  },
 ];
-export default function Community({ section }) {
+export default function Community({ section, includeGallery = true }) {
   const [event, setEvent] = useState(null);
   const [index, setIndex] = useState(null);
   const [photoIndex, setPhotoIndex] = useState(0);
   const [expanded, setExpanded] = useState(false);
+  const [activeProduction, setActiveProduction] = useState(null);
+  const showProduction = (item) => {
+    const nextProduction = activeProduction?.id === item.id ? null : item;
+    setActiveProduction(nextProduction);
+    if (nextProduction) {
+      requestAnimationFrame(() => {
+        document.getElementById(`production-${item.id}-description`)?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      });
+    }
+  };
   const previous = () =>
     setPhotoIndex((value) => {
       const count = gallery[index].images.length;
@@ -24,7 +62,7 @@ export default function Community({ section }) {
     setPhotoIndex((value) => (value + 1) % gallery[index].images.length);
   return (
     <>
-      {section !== "gallery" && <section id="performances" className="section">
+      {section !== "gallery" && <section id="performances" className={`section performances-section ${section ? "standalone-performances" : "home-performances"}`}>
         <div className="container">
           <div className="section-top">
             <SectionHeading
@@ -39,26 +77,39 @@ export default function Community({ section }) {
               Theatre, outreach and film
             </span>
           </div>
-          {productionPosters.map((poster) => (
-            <div className="film-feature" key={poster.src}>
-              <img src={poster.src} alt={`${poster.title} production poster`} loading="lazy" />
-              <div>
-                <h2>{poster.title}</h2>
-                <p>Dummy description for {poster.title}. Details about this production will be added soon.</p>
-              </div>
-            </div>
-          ))}
-          <div className="film-feature">
-            <img src="/documents/bol-bol-raani-1.png" alt="Bol Bol Raani, Itta Itta Aani film poster" loading="lazy" />
-            <div>
-              <p className="eyebrow">OUR FIRST SHORT FILM</p>
-              <h2>Bol Bol Raani, <em>Itta Itta Aani</em></h2>
-              <p>A woman with mystical powers struggles to find acceptance in a world that sees her as different. Her deeply personal journey explores resilience, vulnerability and learning to embrace who she is.</p>
-              <p>Written and directed by Varshaa Raane, the film also marks her acting debut alongside students of her School of Drama and Theatre.</p>
-              <p>All Play Productions in association with Atharva University, Mumbai.</p>
-              <a className="text-link" href="/documents/bol-bol-raani.pdf" target="_blank" rel="noreferrer">View the film leaflet (PDF) &rarr;</a>
-            </div>
+          <div className="production-poster-grid">
+            {productionPosters.map((poster) => {
+              const isActive = activeProduction?.id === poster.id;
+              return (
+                <div className="production-poster-item" key={poster.id}>
+                  <button
+                    className="production-poster-card"
+                    type="button"
+                    onClick={() => showProduction(poster)}
+                    aria-expanded={isActive}
+                    aria-controls={isActive ? `production-${poster.id}-description` : undefined}
+                  >
+                    <img src={poster.src} alt={`${poster.title} production poster`} loading="lazy" />
+                    <span className="production-poster-copy">
+                      <strong>{poster.title}</strong>
+                      <span className="text-link">{isActive ? "Hide description" : "Read description"} <ArrowRight size={16} /></span>
+                    </span>
+                  </button>
+                </div>
+              );
+            })}
           </div>
+          {activeProduction && (
+            <article
+              className="production-description featured-program-description"
+              id={`production-${activeProduction.id}-description`}
+              aria-labelledby={`production-${activeProduction.id}-title`}
+            >
+              <h2 id={`production-${activeProduction.id}-title`}>{activeProduction.title}</h2>
+              <p>{activeProduction.description}</p>
+              {activeProduction.link && <a className="text-link" href={activeProduction.link} target="_blank" rel="noreferrer">View the film leaflet (PDF) &rarr;</a>}
+            </article>
+          )}
           <div className="event-grid">
             {(expanded ? events : events.slice(0, 3)).map((item) => (
               <EventCard key={item.id} event={item} onOpen={setEvent} />
@@ -76,7 +127,7 @@ export default function Community({ section }) {
           </div>
         </div>
       </section>}
-      {section !== "performances" && <section id="gallery" className="section gallery-section">
+      {section !== "performances" && includeGallery && <section id="gallery" className="section gallery-section">
         <div className="container">
           <div className="section-top">
             <SectionHeading

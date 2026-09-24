@@ -59,7 +59,7 @@ export default function About() {
         <div className="container founder-layout">
           <Reveal className="portrait-frame">
             <Artwork
-              src="/Founder.jpeg"
+              src="/founder-varsha-rane.jpeg"
               alt="Mrs. Varsha Rane, Founder and Creator of All Play Productions"
             />
           </Reveal>

@@ -1,17 +1,25 @@
 export default function FounderPage() {
   return (
-    <article className="profile-page">
+    <article className="profile-page founder-page">
       <div className="container">
-        <div className="profile-intro">
-          <div>
-            <p className="eyebrow">OUR FOUNDER</p>
+        <div className="profile-intro founder-intro">
+          <div className="founder-intro-copy">
+            <p className="eyebrow">THE PERSON BEHIND ALL PLAY</p>
             <h1>Mrs. Varsha <em>Rane</em></h1>
             <p className="profile-lead">Founder, creator and a champion of young voices.</p>
             <p>A visionary and changemaker, Mrs. Varsha Rane empowers youth and children through drama and theatre. By creating inclusive platforms for rural and tribal children across Maharashtra, she nurtures confidence, personality development and fearless creative expression.</p>
           </div>
-          <img src="/founder-varsha-rane.jpeg" width="959" height="1280" alt="Mrs. Varsha Rane, Founder and Creator of All Play Productions" />
+          <figure className="founder-portrait">
+            <img src="/founder-varsha-rane.jpeg" width="959" height="1280" alt="Mrs. Varsha Rane, Founder and Creator of All Play Productions" />
+            <figcaption>Mrs. Varsha Rane <span>Founder &amp; Creative Leader</span></figcaption>
+          </figure>
         </div>
-        <div className="profile-body">
+        <div className="founder-impact" aria-label="Career and community impact">
+          <div><strong>22 years</strong><span>with Air India</span></div>
+          <div><strong>600+</strong><span>young people trained</span></div>
+          <div><strong>50+</strong><span>productions created</span></div>
+        </div>
+        <div className="profile-body founder-story">
           <section>
             <h2>From Aviation to <em>the Arts</em></h2>
             <p>Born and raised in Mumbai, Mrs. Varsha Rane served with Air India as an air hostess for 22 years. Her love of the stage began at school and grew into training in Marathi, Hindi and English theatre with Nadira Babbar, Divya Palat, Ashok Purang and Prof. Vaman Kendre.</p>
@@ -38,7 +46,12 @@ export default function FounderPage() {
             <p>She wrote and directed the theatrical production “Deva Shree Ganesha”. Her latest project, the short film “Bol Bol Raani, Itta Itta Aani”, marks her acting debut; she also wrote and directed the film.</p>
             <p>Through her leadership and creative work, she continues to share Indian culture, arts and values while inspiring confidence and creativity in the next generation.</p>
           </section>
-          <p>Her creative ambitions include film festivals and future feature film, television and web series productions.</p><a className="text-link" href="/performances">Explore her theatre and film work &rarr;</a>
+          <section className="founder-future">
+            <p className="eyebrow">LOOKING AHEAD</p>
+            <h2>More stories, <em>more stages</em></h2>
+            <p>Her creative ambitions include film festivals and future feature film, television and web series productions.</p>
+            <a className="text-link" href="/performances">Explore her theatre and film work &rarr;</a>
+          </section>
         </div>
       </div>
     </article>

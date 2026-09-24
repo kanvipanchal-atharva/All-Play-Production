@@ -58,7 +58,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .learning-card, .future-grid article, .highlights { border-color: var(--border); }
 .learning-card:hover { border-color: var(--maroon); }
 .learning-top > span, .highlights svg { color: var(--maroon); }
-.why-section { background: linear-gradient(120deg, #c9e0d7, #e7cfda); color: var(--ink); }
+.why-section { background: linear-gradient(120deg, #fbf7ef, #f5ece7); color: var(--ink); }
 .light h2 { color: var(--ink); }
 .light h2 em, .skills-list small { color: var(--maroon); }
 .why-section p { color: var(--muted); }

@@ -11,7 +11,7 @@ const featuredPrograms = [
   {
     id: "all-play-carnival-of-joy",
     title: "All Play A Carnival of Joy",
-    description: "Dummy description for All Play A Carnival of Joy.",
+    description: "A theatre carnival celebrating every child's chance to explore, express and perform, supported by Atharva Foundation.",
   },
   {
     id: "all-play-production",
@@ -23,13 +23,20 @@ export default function Programs({ onSelect }) {
   const [activeProgram, setActiveProgram] = useState(null);
   const showProgramDescription = (programId) => {
     setActiveProgram(programId);
-    requestAnimationFrame(() => {
-      document.getElementById(`${programId}-description`)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
   };
   return (
     <>
-      <section className="section featured-programs-section" aria-label="Featured programs">
+      <section className="programs-intro-section" aria-label="About our programs">
+        <div className="container">
+          <div className="profile-intro programs-intro">
+            <div>
+              <p className="eyebrow">FIND YOUR SPOTLIGHT</p>
+              <h1>Learn, Perform <em>and Grow</em></h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="section featured-programs-section programs-design" aria-label="Featured programs">
         <div className="container">
           <div className="featured-programs-grid">
             {featuredPrograms.map((program) => (
@@ -42,7 +49,7 @@ export default function Programs({ onSelect }) {
           </div>
           <div className="featured-program-descriptions">
             {featuredPrograms.filter((program) => program.id === activeProgram).map((program) => (
-              <article className="featured-program-description" id={`${program.id}-description`} key={program.id}>
+              <article className={`featured-program-description featured-description-${program.id}`} id={`${program.id}-description`} key={program.id}>
                 <h2>{program.title}</h2>
                 {program.id === "school-of-drama-theatre" ? (
                   <div className="drama-course-details">
@@ -76,7 +83,7 @@ export default function Programs({ onSelect }) {
           </div>
         </div>
       </section>
-      <section id="programs" className="section programs-section">
+      <section id="programs" className="section programs-section programs-design">
         <div className="container">
           <Reveal className="section-top">
             <SectionHeading
@@ -96,7 +103,7 @@ export default function Programs({ onSelect }) {
           <p><a className="text-link" href="/documents/all-play-leaflet.pdf" target="_blank" rel="noreferrer">Explore our theatre (PDF) &rarr;</a></p>
         </div>
       </section>
-      <section className="section school-outreach-section">
+      <section className="section school-outreach-section programs-design">
         <div className="container">
           <SectionHeading eyebrow="THEATRE IN YOUR SCHOOL" description="An introduction to All Play Productions, Atharva Foundation and Atharva University through short videos and a practical demo class led by a theatre trainer.">
             A First Step <em>onto the Stage</em>
@@ -105,7 +112,7 @@ export default function Programs({ onSelect }) {
           <a className="text-link" href="/contact#contact">Enquire about a school presentation &rarr;</a>
         </div>
       </section>
-      <section className="section learning-section">
+      <section className="section learning-section programs-design">
         <div className="container">
           <SectionHeading
             eyebrow="BEYOND THE SCRIPT"

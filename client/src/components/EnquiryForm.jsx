@@ -40,10 +40,7 @@ export default function EnquiryForm({ selectedProgram, onSelect }) {
       const body = await response.json();
       if (!response.ok) {
         setErrors(body.errors || {});
-        setStatus({
-          error: true,
-          message: body.message || "Unable to submit. Please try again.",
-        });
+        setStatus({ error: true, message: body.message || "Unable to send. Please try again." });
       } else {
         setStatus({ error: false, message: body.message });
         form.reset();
@@ -52,8 +49,7 @@ export default function EnquiryForm({ selectedProgram, onSelect }) {
     } catch {
       setStatus({
         error: true,
-        message:
-          "Unable to reach the server. Please check your connection and try again. Your entries have been kept.",
+        message: "Unable to reach the server. Please check your connection and try again. Your entries have been kept.",
       });
     } finally {
       setBusy(false);
@@ -66,25 +62,35 @@ export default function EnquiryForm({ selectedProgram, onSelect }) {
       <div className="form-grid">
         {[
           [
-            "name",
-            "Parent / Participant Name",
+            "parentName",
+            "Parent's Name",
             "text",
-            "Your full name",
+            "Parent or guardian's full name",
             "name",
+          ],
+          [
+            "name",
+            "Participant's Name",
+            "text",
+            "Participant's full name",
+            "off",
           ],
           ["age", "Participant’s Age", "number", "Age in years", "off"],
           ["mobile", "Mobile Number", "tel", "+91 98765 43210", "tel"],
           ["email", "Email Address", "email", "you@example.com", "email"],
         ].map(([key, label, type, placeholder, autoComplete]) => (
-          <label key={key}>
-            {label} <span aria-hidden="true">*</span>
+          <label key={key} className={key === "email" ? "enquiry-email-field" : undefined}>
+            {label}
+            {["name", "age", "mobile", "email"].includes(key) && (
+              <span aria-hidden="true">*</span>
+            )}
             <input
               name={key}
               type={type}
               placeholder={placeholder}
               autoComplete={autoComplete}
-              required
-              maxLength={key === "name" ? 100 : 254}
+              required={["name", "age", "mobile", "email"].includes(key)}
+              maxLength={["name", "parentName"].includes(key) ? 100 : 254}
               min={key === "age" ? 5 : undefined}
               max={key === "age" ? 99 : undefined}
               {...errorProps(key)}
@@ -93,6 +99,17 @@ export default function EnquiryForm({ selectedProgram, onSelect }) {
           </label>
         ))}
       </div>
+      <label>
+        Address <span className="optional">(optional)</span>
+        <textarea
+          name="address"
+          rows="2"
+          maxLength={300}
+          placeholder="Your home address"
+          {...errorProps("address")}
+        />
+        {error("address")}
+      </label>
       <label>
         Preferred Program <span aria-hidden="true">*</span>
         <select
@@ -130,20 +147,16 @@ export default function EnquiryForm({ selectedProgram, onSelect }) {
           {...errorProps("consent")}
         />
         <span>
-          I consent to my details being processed to validate this enquiry.
+          I consent to my details being used to respond to this enquiry.
         </span>
       </label>
       {error("consent")}
       <p className="form-note">
-        * Required. Preview only: enquiries are not stored or delivered.
+        * Required. Your enquiry will be emailed to All Play Productions.
       </p>
       <button className="button" disabled={busy} type="submit">
-        {busy ? "Submitting…" : "Submit Enquiry"}
-        {busy ? (
-          <LoaderCircle size={18} className="loading" />
-        ) : (
-          <ArrowUpRight size={18} />
-        )}
+        {busy ? "Sending…" : "Submit Enquiry"}
+        {busy ? <LoaderCircle size={18} className="loading" /> : <ArrowUpRight size={18} />}
       </button>
       <div aria-live="polite" aria-atomic="true">
         {status && (

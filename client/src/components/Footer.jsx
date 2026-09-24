@@ -1,24 +1,16 @@
 import { useEffect, useId, useState } from "react";
-import { ArrowUp, ChevronDown, Instagram, MessageCircle } from "lucide-react";
-import { contact, programs, whatsappUrl } from "../data";
+import { ArrowUp, ChevronDown, Instagram, Phone } from "lucide-react";
+import { contact } from "../data";
 import { Logo, navigation, navigationHref } from "./Header";
 export function WhatsAppButton() {
   return (
     <a
       className="floating-whatsapp"
-      href={contact.whatsapp ? whatsappUrl : navigationHref("contact")}
-      aria-label={
-        contact.whatsapp
-          ? "Contact us on WhatsApp"
-          : "WhatsApp number to be confirmed — view contact details"
-      }
-      title={
-        contact.whatsapp
-          ? "Chat on WhatsApp"
-          : "WhatsApp number to be confirmed"
-      }
+      href={navigationHref("contact")}
+      aria-label="Go to contact page"
+      title="Contact us"
     >
-      <MessageCircle size={24} />
+      <Phone size={24} />
     </a>
   );
 }
@@ -75,17 +67,13 @@ function FooterGroup({ title, children }) {
     </div>
   );
 }
-export default function Footer({ onPolicy, onSelect }) {
+export default function Footer({ onPolicy }) {
   return (
     <footer id="page-footer">
       <div className="container footer-grid">
         <div>
           <Logo />
-          <p>
-            A little imagination.
-            <br />A little courage.
-            <br />A world of possibilities.
-          </p>
+          <p className="footer-tagline">A little imagination. A little courage. A world of possibilities.</p>
           <a
             className="social-link"
             href={contact.instagram}
@@ -102,36 +90,25 @@ export default function Footer({ onPolicy, onSelect }) {
             </a>
           ))}
         </FooterGroup>
-        <FooterGroup title="Our Programs">
-          {programs.map((program) => (
-            <a
-              key={program.id}
-              href={`/contact?program=${encodeURIComponent(program.id)}#contact`}
-              onClick={() => onSelect(program.id)}
-            >
-              {program.title}
-            </a>
-          ))}
-        </FooterGroup>
         <div>
           <FooterGroup title="Come Say Hello">
-            <p>
-              Phone: {contact.phone || "To be confirmed"}
+            <p className="footer-contact-list">
+              <span>Phone</span>
+              {contact.phone ? <a href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`}>{contact.phone}</a> : <span>To be confirmed</span>}
               {contact.additionalPhones.map((phone) => (
-                <span key={phone}><br />{phone}</span>
+                <a key={phone} href={`tel:${phone.replace(/[^+\d]/g, "")}`}>{phone}</a>
               ))}
-              <br />
-              Email: {contact.email || "To be confirmed"}
-              <br />
-              Venue: {contact.venue || "To be confirmed"}
+              <span>Email</span>
+              {contact.email ? <a href={`mailto:${contact.email}`}>{contact.email}</a> : <span>To be confirmed</span>}
+              <span>Venue</span>
+              <span>{contact.venue || "To be confirmed"}</span>
             </p>
           </FooterGroup>
-          <p>
-            Founded by
-            <br />
-            <span className="gold">Mrs. Varsha Rane</span>
-          </p>
         </div>
+      </div>
+      <div className="container footer-founder-credit">
+        <span>Founded by</span>
+        <strong>Mrs. Varsha Rane</strong>
       </div>
       <div className="container footer-bottom">
         <span>

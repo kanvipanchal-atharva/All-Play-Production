@@ -9,7 +9,7 @@ export function validateEnquiry(input) {
   const source =
     input && typeof input === "object" && !Array.isArray(input) ? input : {};
   const data = Object.fromEntries(
-    ["name", "age", "mobile", "email", "program", "message"].map((key) => [
+    ["name", "parentName", "address", "age", "mobile", "email", "program", "message"].map((key) => [
       key,
       clean(source[key]),
     ]),
@@ -18,6 +18,10 @@ export function validateEnquiry(input) {
   const errors = {};
   if (data.name.length < 2 || data.name.length > 100)
     errors.name = "Enter a name between 2 and 100 characters.";
+  if (data.parentName.length > 100)
+    errors.parentName = "Keep the parent's name within 100 characters.";
+  if (data.address.length > 300)
+    errors.address = "Keep the address within 300 characters.";
   if (
     !/^\d{1,2}$/.test(data.age) ||
     Number(data.age) < 5 ||

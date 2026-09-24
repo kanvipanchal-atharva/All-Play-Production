@@ -4,7 +4,7 @@ import { createApp } from "../app.js";
 import { validateEnquiry } from "../../shared/validation.js";
 let server, base;
 before(async () => {
-  server = createApp({ rateMax: 100 }).listen(0);
+  server = createApp({ rateMax: 100, emailTransport: async () => ({ ok: true }) }).listen(0);
   await new Promise((resolve) => server.once("listening", resolve));
   base = `http://127.0.0.1:${server.address().port}`;
 });
@@ -59,12 +59,12 @@ test("rejects invalid fields, types, age, program and consent", () => {
   ])
     assert.equal(validateEnquiry(value).valid, false);
 });
-test("successful API response honestly describes no delivery and omits personal data", async () => {
+test("successful API response confirms email delivery without returning personal data", async () => {
   const response = await post(valid);
   assert.equal(response.status, 200);
   const body = await response.json();
   assert.equal(body.success, true);
-  assert.match(body.message, /does not store or deliver/);
+  assert.match(body.message, /sent to All Play Productions/);
   assert.equal(JSON.stringify(body).includes(valid.email), false);
   assert.ok(response.headers.get("content-security-policy"));
 });
