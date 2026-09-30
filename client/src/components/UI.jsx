@@ -1,5 +1,4 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { Doodle } from "./Doodles";
 import {
   ArrowUpRight,
   Drama,
@@ -50,7 +49,6 @@ export function SectionHeading({
 }) {
   return (
     <div className={`section-heading ${light ? "light" : ""}`}>
-      <Doodle kind="star" className="heading-doodle" />
       <p className="eyebrow">
         <span />
         {eyebrow}

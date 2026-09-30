@@ -9,25 +9,30 @@ const productionPosters = [
     id: "deva-shree-ganesha",
     src: "/documents/shriGanesha.jpeg",
     title: "देवा श्री गणेशा",
-    description: "A Marathi stage production written and directed by Varshaa Rane, presented by All Play Productions.",
+    description: "When the elders decide not to celebrate Ganeshotsav due to conflicts between themselves, the children decide to celebrate the festival with their innocence, enthusiasm and love for Bappa.",
+    credits: "Mrs. Varshaa Rane",
   },
   {
     id: "mi-nahi-janar-shalela",
     src: "/documents/school.png",
     title: "मी नाही जाणार शाळेला",
-    description: "A school-themed Marathi theatre production featuring young performers, presented by Atharva Foundation and All Play Productions.",
+    description: "The story of a little girl's fight against the education system.",
+    credits: "Vishal Sobavne",
   },
   {
     id: "kshitijachya-palikade",
     src: "/documents/kshitija.jpeg",
     title: "क्षितिजाच्या पलिकडे",
-    description: "An in-house stage production by All Play Productions, bringing young performers together through theatre.",
+    description: "A young girl visits her father in a village during her vacation. As she gets to know the villagers and understands their struggles, she takes initiative to help them overcome their challenges and bring change.",
+    credits: "Written by: Dhananjay Sardeshpande | Directed by: Mrs. Varshaa Rane",
+    venue: "Prabodhankar Keshav Sitaram Thackeray Natya Mandir, Chhatrapati Shivaji Maharaj Natyamandir",
   },
   {
     id: "ghonga-basant",
     src: "/documents/ghongaBasant.jpeg",
-    title: "घोंगा बसन्त",
-    description: "A Marathi stage production featuring young performers from All Play Productions.",
+    title: "घोंघा बसन्त",
+    description: "A unique story set in a village where children live without a king or a leader. They choose a young shepherd boy as their king, but he gradually misguides the villagers through his decisions. The play explores the importance of education.",
+    credits: "Written by: Jayvardhan | Directed by: Yogita Ranade",
   },
   {
     id: "bol-bol-raani",
@@ -107,6 +112,10 @@ export default function Community({ section, includeGallery = true }) {
             >
               <h2 id={`production-${activeProduction.id}-title`}>{activeProduction.title}</h2>
               <p>{activeProduction.description}</p>
+              {activeProduction.credits && <dl className="production-credits">
+                <div><dt>Written &amp; Directed by</dt><dd>{activeProduction.credits}</dd></div>
+                {activeProduction.venue && <div><dt>Held at (commercial)</dt><dd>{activeProduction.venue}</dd></div>}
+              </dl>}
               {activeProduction.link && <a className="text-link" href={activeProduction.link} target="_blank" rel="noreferrer">View the film leaflet (PDF) &rarr;</a>}
             </article>
           )}

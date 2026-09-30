@@ -161,3 +161,116 @@ h1 em, h2 em { font-family: var(--font-display); font-weight: 600; }
 @media (prefers-reduced-motion: reduce) {
   .side-doodle { animation: none; }
 }
+
+/* Home uses one continuous pastel canvas, rather than alternating paper and colour blocks. */
+body:has(.home-page) {
+  background: #e8d4c7;
+}
+.home-page {
+  background:
+    radial-gradient(ellipse at 8% 7%, #b8d8d0 0%, transparent 24%),
+    radial-gradient(ellipse at 94% 24%, #f2d98d 0%, transparent 25%),
+    radial-gradient(ellipse at 8% 62%, #eab6bd 0%, transparent 28%),
+    radial-gradient(ellipse at 86% 82%, #bdd4ad 0%, transparent 27%),
+    linear-gradient(150deg, #efb595 0%, #eab6bd 35%, #b8d8d0 66%, #f2d98d 100%);
+}
+.home-page .hero,
+.home-page .founder-section,
+.home-page .programs-intro-section,
+.home-page .featured-programs-section,
+.home-page .programs-section,
+.home-page .school-outreach-section,
+.home-page .learning-section,
+.home-page .why-section,
+.home-page .home-performances,
+.home-page .future-section,
+.home-page .cta-section {
+  background: transparent;
+}
+.home-page .hero-shade {
+  background:
+    radial-gradient(ellipse at 12% 22%, #b8d8d0bd, transparent 44%),
+    radial-gradient(ellipse at 45% 82%, #eab6bdbd, transparent 52%),
+    linear-gradient(90deg, #efb595df 0%, #eab6bdc7 38%, #b8d8d052 70%, transparent 100%);
+}
+.home-page .program-card,
+.home-page .event-card,
+.home-page .learning-card,
+.home-page .future-grid article,
+.home-page .production-poster-card,
+.home-page .film-feature {
+  background: #f5dfc0;
+}
+.home-page .featured-program-card {
+  border-color: #b98068;
+  box-shadow: 0 10px 24px #74475918;
+}
+.home-page .featured-program-card:nth-child(1) {
+  background: linear-gradient(145deg, #c9e2de, #add1ca);
+}
+.home-page .featured-program-card:nth-child(2) {
+  background: linear-gradient(145deg, #e8c4cf, #dcaeba);
+}
+.home-page .featured-program-card:nth-child(3) {
+  background: linear-gradient(145deg, #d6e2be, #bdd19f);
+}
+.home-page .featured-program-description,
+.home-page .production-description,
+.home-page .batch-panel,
+.home-page .theatre-stats {
+  background: #c9e2de;
+}
+.home-page .featured-description-all-play-carnival-of-joy {
+  background: #e8c4cf;
+}
+.home-page .featured-description-all-play-production {
+  background: #d6e2be;
+}
+.home-page .future-grid {
+  gap: 20px;
+}
+.home-page .future-grid article {
+  min-height: 175px;
+  padding: 26px;
+  border: 1px solid #b98068;
+  border-radius: 18px;
+  background: #f5dfc0;
+  box-shadow: 0 8px 20px #74475914;
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.home-page .future-grid article:hover {
+  background: #e8c4cf;
+  box-shadow: 0 13px 26px #74475922;
+  transform: translateY(-3px);
+}
+@media (min-width: 768px) {
+  .home-page .future-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .home-page .future-grid article {
+    grid-column: span 2;
+  }
+  .home-page .future-grid article:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+}
+.home-page .learning-card:hover {
+  border-color: #a54c66;
+  background: #e8c4cf;
+}
+.home-page .programs-design.school-outreach-section > .container {
+  border-color: #b98092;
+  background: linear-gradient(145deg, #e8c4cf, #dcaeba);
+}
+@media (min-width: 768px) {
+  .performances-section .section-top {
+    max-width: none;
+    width: 100%;
+  }
+  .performances-section .small-note {
+    margin-left: auto;
+  }
+}
+.home-page .cta-section {
+  border-color: #7d263d40;
+}

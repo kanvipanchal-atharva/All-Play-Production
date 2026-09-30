@@ -54,7 +54,15 @@ export const gallery = [
       { "src": "/documents/B_carnival3.JPG", "alt": "All Play Carnival of Joy Season 3 photo 2", "title": "A Carnival of Joy - Season 3" },
       { "src": "/documents/C_carnival3.JPG", "alt": "All Play Carnival of Joy Season 3 photo 3", "title": "A Carnival of Joy - Season 3" },
       { "src": "/documents/D_carnival3.JPG", "alt": "All Play Carnival of Joy Season 3 photo 4", "title": "A Carnival of Joy - Season 3" },
-      { "src": "/documents/E_carnival3.JPG", "alt": "All Play Carnival of Joy Season 3 photo 5", "title": "A Carnival of Joy - Season 3" }
+      { "src": "/documents/E_carnival3.JPG", "alt": "All Play Carnival of Joy Season 3 photo 5", "title": "A Carnival of Joy - Season 3" },
+      { "src": "/documents/carnivalS4_1.JPG", "alt": "A Carnival of Joy Season 4 photo 1", "title": "A Carnival of Joy - Season 4" },
+      { "src": "/documents/carnivalS4_2.JPG", "alt": "A Carnival of Joy Season 4 photo 2", "title": "A Carnival of Joy - Season 4" },
+      { "src": "/documents/carnivalS4_3.JPG", "alt": "A Carnival of Joy Season 4 photo 3", "title": "A Carnival of Joy - Season 4" },
+      { "src": "/documents/carnivalS4_4.JPG", "alt": "A Carnival of Joy Season 4 photo 4", "title": "A Carnival of Joy - Season 4" },
+      { "src": "/documents/carnivalS4_5.JPG", "alt": "A Carnival of Joy Season 4 photo 5", "title": "A Carnival of Joy - Season 4" },
+      { "src": "/documents/carnivalS4_6.JPG", "alt": "A Carnival of Joy Season 4 photo 6", "title": "A Carnival of Joy - Season 4" },
+      { "src": "/documents/carnivalS4_7.JPG", "alt": "A Carnival of Joy Season 4 photo 7", "title": "A Carnival of Joy - Season 4" },
+      { "src": "/documents/carnivalS4_8.JPG", "alt": "A Carnival of Joy Season 4 photo 8", "title": "A Carnival of Joy - Season 4" }
     ]
   },
   {

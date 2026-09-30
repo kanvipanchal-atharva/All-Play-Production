@@ -32,10 +32,6 @@ export default function Hero() {
             Enquire Now
           </PrimaryButton>
         </div>
-        <div className="hero-tagline">
-          <span />
-          All Play... a carnival of joy.
-        </div>
       </div>
       <div className="hero-bottom container">
         <a href="#about">

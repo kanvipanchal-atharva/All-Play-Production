@@ -43,7 +43,7 @@ export default function App() {
     <MotionConfig reducedMotion="user">
       <Header />
       <DoodleRail />
-      <main id="main">
+      <main id="main" className={page ? "" : "home-page"}>
         {page === "/founder" ? <FounderPage /> : page === "/about-theatre" ? <AchievementsPage /> : page === "/why-theatre" ? <>
           <TheatrePage />
           <WhyTheatre />
