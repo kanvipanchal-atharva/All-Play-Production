@@ -16,10 +16,11 @@ export function validateEnquiry(input) {
   );
   data.consent = source.consent === true;
   const errors = {};
-  if (data.name.length < 2 || data.name.length > 100)
-    errors.name = "Enter a name between 2 and 100 characters.";
-  if (data.parentName.length > 100)
-    errors.parentName = "Keep the parent's name within 100 characters.";
+  const namePattern = /^[\p{L}][\p{L}\s'-]*$/u;
+  if (data.name.length < 2 || data.name.length > 100 || !namePattern.test(data.name))
+    errors.name = "Enter a name using letters only.";
+  if (data.parentName.length > 100 || (data.parentName && !namePattern.test(data.parentName)))
+    errors.parentName = "Enter the parent's name using letters only.";
   if (data.address.length > 300)
     errors.address = "Keep the address within 300 characters.";
   if (

@@ -1,5 +1,5 @@
 import { useEffect, useId, useState } from "react";
-import { ArrowUp, ChevronDown, Instagram, Phone } from "lucide-react";
+import { ArrowUp, ChevronDown, Facebook, Instagram, Phone, Youtube } from "lucide-react";
 import { contact } from "../data";
 import { Logo, navigation, navigationHref } from "./Header";
 export function WhatsAppButton() {
@@ -73,15 +73,7 @@ export default function Footer({ onPolicy }) {
       <div className="container footer-grid">
         <div>
           <Logo />
-          <p className="footer-tagline">A little imagination. A little courage. A world of possibilities.</p>
-          <a
-            className="social-link"
-            href={contact.instagram}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Instagram size={18} /> @allplayproductions
-          </a>
+          <p className="footer-tagline">A little imagination. A little courage.<br />A world of possibilities.</p>
         </div>
         <FooterGroup title="Explore">
           {navigation.slice(1).map(([id, label]) => (
@@ -91,7 +83,7 @@ export default function Footer({ onPolicy }) {
           ))}
         </FooterGroup>
         <div>
-          <FooterGroup title="Come Say Hello">
+          <FooterGroup title="LET’S CONNECT">
             <p className="footer-contact-list">
               <span>Phone</span>
               {contact.phone ? <a href={`tel:${contact.phone.replace(/[^+\d]/g, "")}`}>{contact.phone}</a> : <span>To be confirmed</span>}
@@ -103,6 +95,17 @@ export default function Footer({ onPolicy }) {
               <span>Venue</span>
               <span>{contact.venue || "To be confirmed"}</span>
             </p>
+            <div className="footer-social-links" aria-label="Social media">
+              <a className="social-link" href={contact.instagram} target="_blank" rel="noreferrer">
+                <Instagram size={18} aria-hidden="true" /> Instagram
+              </a>
+              <a className="social-link" href={contact.facebook} target="_blank" rel="noreferrer">
+                <Facebook size={18} aria-hidden="true" /> Facebook
+              </a>
+              <a className="social-link" href={contact.youtube} target="_blank" rel="noreferrer">
+                <Youtube size={18} aria-hidden="true" /> YouTube
+              </a>
+            </div>
           </FooterGroup>
         </div>
       </div>
@@ -120,7 +123,7 @@ export default function Footer({ onPolicy }) {
             Privacy Policy
           </button>
           <button onClick={() => onPolicy("Terms and Conditions")}>
-            Terms
+            Terms and Conditions
           </button>
         </div>
         <span>Made for the love of theatre.</span>

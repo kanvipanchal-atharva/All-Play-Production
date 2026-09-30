@@ -76,7 +76,7 @@ export default function EnquiryForm({ selectedProgram, onSelect }) {
             "off",
           ],
           ["age", "Participant’s Age", "number", "Age in years", "off"],
-          ["mobile", "Mobile Number", "tel", "+91 98765 43210", "tel"],
+          ["mobile", "Mobile Number", "tel", "Your contact number", "tel"],
           ["email", "Email Address", "email", "you@example.com", "email"],
         ].map(([key, label, type, placeholder, autoComplete]) => (
           <label key={key} className={key === "email" ? "enquiry-email-field" : undefined}>
@@ -90,9 +90,17 @@ export default function EnquiryForm({ selectedProgram, onSelect }) {
               placeholder={placeholder}
               autoComplete={autoComplete}
               required={["name", "age", "mobile", "email"].includes(key)}
+              inputMode={key === "mobile" ? "numeric" : undefined}
               maxLength={["name", "parentName"].includes(key) ? 100 : 254}
               min={key === "age" ? 5 : undefined}
               max={key === "age" ? 99 : undefined}
+              onInput={(event) => {
+                if (key === "mobile") {
+                  event.currentTarget.value = event.currentTarget.value.replace(/\D/g, "");
+                } else if (["name", "parentName"].includes(key)) {
+                  event.currentTarget.value = event.currentTarget.value.replace(/[^\p{L}\s'-]/gu, "");
+                }
+              }}
               {...errorProps(key)}
             />
             {error(key)}
@@ -100,7 +108,7 @@ export default function EnquiryForm({ selectedProgram, onSelect }) {
         ))}
       </div>
       <label>
-        Address <span className="optional">(optional)</span>
+        Address
         <textarea
           name="address"
           rows="2"
@@ -129,7 +137,7 @@ export default function EnquiryForm({ selectedProgram, onSelect }) {
         {error("program")}
       </label>
       <label>
-        Message <span className="optional">(optional)</span>
+        Message
         <textarea
           name="message"
           rows="3"
@@ -139,17 +147,18 @@ export default function EnquiryForm({ selectedProgram, onSelect }) {
         />
         {error("message")}
       </label>
-      <label className="consent">
+      <div className="consent">
         <input
+          id="consent"
           name="consent"
           type="checkbox"
           required
           {...errorProps("consent")}
         />
-        <span>
+        <label htmlFor="consent">
           I consent to my details being used to respond to this enquiry.
-        </span>
-      </label>
+        </label>
+      </div>
       {error("consent")}
       <p className="form-note">
         * Required. Your enquiry will be emailed to All Play Productions.

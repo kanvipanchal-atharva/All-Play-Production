@@ -124,7 +124,7 @@ h1 em, h2 em { font-family: var(--font-display); font-weight: 600; }
 .portrait-frame img { border-radius: 40% 40% 4px 4px; }
 .learning-card { border-top: 2px dashed var(--border); }
 .learning-top > svg { width: 34px; height: 34px; padding: 5px; background: var(--gold); border-radius: 10px; transform: rotate(-7deg); }
-.gallery-item { border: 7px solid #fffaf5; border-bottom-width: 19px; border-radius: 7px; }
+.gallery-item { border: 0; border-radius: 7px; box-shadow: none; }
 .gallery-item:nth-child(3n + 1) { transform: rotate(-2deg); }
 .gallery-item:nth-child(3n) { transform: rotate(2deg); }
 .gallery-grid { gap: 24px; padding: 8px; }
@@ -164,15 +164,15 @@ h1 em, h2 em { font-family: var(--font-display); font-weight: 600; }
 
 /* Home uses one continuous pastel canvas, rather than alternating paper and colour blocks. */
 body:has(.home-page) {
-  background: #e8d4c7;
+  background:
+    radial-gradient(ellipse at 8% 7%, #b8d8d070 0%, transparent 24%),
+    radial-gradient(ellipse at 94% 24%, #f2d98d70 0%, transparent 25%),
+    radial-gradient(ellipse at 8% 62%, #eab6bd66 0%, transparent 28%),
+    radial-gradient(ellipse at 86% 82%, #bdd4ad66 0%, transparent 27%),
+    linear-gradient(150deg, #fbf5eb 0%, #f8ece8 35%, #edf4ef 66%, #fbf5eb 100%);
 }
 .home-page {
-  background:
-    radial-gradient(ellipse at 8% 7%, #b8d8d0 0%, transparent 24%),
-    radial-gradient(ellipse at 94% 24%, #f2d98d 0%, transparent 25%),
-    radial-gradient(ellipse at 8% 62%, #eab6bd 0%, transparent 28%),
-    radial-gradient(ellipse at 86% 82%, #bdd4ad 0%, transparent 27%),
-    linear-gradient(150deg, #efb595 0%, #eab6bd 35%, #b8d8d0 66%, #f2d98d 100%);
+  background: transparent;
 }
 .home-page .hero,
 .home-page .founder-section,
@@ -189,9 +189,9 @@ body:has(.home-page) {
 }
 .home-page .hero-shade {
   background:
-    radial-gradient(ellipse at 12% 22%, #b8d8d0bd, transparent 44%),
-    radial-gradient(ellipse at 45% 82%, #eab6bdbd, transparent 52%),
-    linear-gradient(90deg, #efb595df 0%, #eab6bdc7 38%, #b8d8d052 70%, transparent 100%);
+    radial-gradient(ellipse at 12% 22%, #b8d8d070, transparent 44%),
+    radial-gradient(ellipse at 45% 82%, #eab6bd70, transparent 52%),
+    linear-gradient(90deg, #fbf5ebed 0%, #f8ece8c7 38%, #edf4ef52 70%, transparent 100%);
 }
 .home-page .program-card,
 .home-page .event-card,
@@ -206,25 +206,25 @@ body:has(.home-page) {
   box-shadow: 0 10px 24px #74475918;
 }
 .home-page .featured-program-card:nth-child(1) {
-  background: linear-gradient(145deg, #c9e2de, #add1ca);
+  background: radial-gradient(ellipse at 100% 0%, #f2d98d 0%, #eab6bd 78%);
 }
 .home-page .featured-program-card:nth-child(2) {
-  background: linear-gradient(145deg, #e8c4cf, #dcaeba);
+  background: radial-gradient(ellipse at 100% 0%, #f2d98d 0%, #eab6bd 78%);
 }
 .home-page .featured-program-card:nth-child(3) {
-  background: linear-gradient(145deg, #d6e2be, #bdd19f);
+  background: radial-gradient(ellipse at 100% 0%, #f2d98d 0%, #eab6bd 78%);
 }
 .home-page .featured-program-description,
 .home-page .production-description,
 .home-page .batch-panel,
 .home-page .theatre-stats {
-  background: #c9e2de;
+  background: radial-gradient(ellipse at 100% 0%, #f2d98d 0%, #eab6bd 78%);
 }
 .home-page .featured-description-all-play-carnival-of-joy {
-  background: #e8c4cf;
+  background: radial-gradient(ellipse at 100% 0%, #f2d98d 0%, #eab6bd 78%);
 }
 .home-page .featured-description-all-play-production {
-  background: #d6e2be;
+  background: radial-gradient(ellipse at 100% 0%, #f2d98d 0%, #eab6bd 78%);
 }
 .home-page .future-grid {
   gap: 20px;
@@ -261,6 +261,33 @@ body:has(.home-page) {
 .home-page .programs-design.school-outreach-section > .container {
   border-color: #b98092;
   background: linear-gradient(145deg, #e8c4cf, #dcaeba);
+}
+
+/* Carry the home's blended pastel canvas through the standalone pages. */
+body:not(:has(.home-page)) {
+  background:
+    radial-gradient(ellipse at 8% 7%, #b8d8d070 0%, transparent 24%),
+    radial-gradient(ellipse at 94% 24%, #f2d98d70 0%, transparent 25%),
+    radial-gradient(ellipse at 8% 62%, #eab6bd66 0%, transparent 28%),
+    radial-gradient(ellipse at 86% 82%, #bdd4ad66 0%, transparent 27%),
+    linear-gradient(150deg, #fbf5eb 0%, #f8ece8 35%, #edf4ef 66%, #fbf5eb 100%);
+}
+body:not(:has(.home-page)) #main > .profile-page,
+body:not(:has(.home-page)) #main > .content-page,
+body:not(:has(.home-page)) #main .section {
+  background: transparent !important;
+}
+#page-footer {
+  background: transparent;
+  border-top: 0;
+  padding-top: 24px;
+}
+#contact .enquiry-form input:focus-visible,
+#contact .enquiry-form select:focus-visible,
+#contact .enquiry-form textarea:focus-visible {
+  outline: none;
+  border: 1px solid #d9cfbe;
+  box-shadow: none;
 }
 @media (min-width: 768px) {
   .performances-section .section-top {

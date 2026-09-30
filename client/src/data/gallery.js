@@ -1,4 +1,5 @@
 export const gallery = [
+  /* Temporarily hidden gallery cards:
   {
     "id": 0,
     "title": "All Play on stage",
@@ -29,11 +30,11 @@ export const gallery = [
       { "src": "/documents/all-play-leaflet-2.png", "alt": "Workshops, performances and guest artist interactions" }
     ]
   },
+  */
   {
     "id": 4,
     "title": "A Carnival of Joy",
     "images": [
-      { "src": "/documents/carnival-of-joy.jpeg", "alt": "All Play mission in Marathi and English with theatre contact details" },
       { "src": "/documents/IMG_2140.JPG", "alt": "All Play Carnival of Joy photo 1", "title": "A Carnival of Joy - Season 1" },
       { "src": "/documents/IMG_2150.JPG", "alt": "All Play Carnival of Joy photo 2", "title": "A Carnival of Joy - Season 1" },
       { "src": "/documents/IMG_2197.JPG", "alt": "All Play Carnival of Joy photo 3", "title": "A Carnival of Joy - Season 1" },
@@ -89,7 +90,6 @@ export const gallery = [
     "images": [
       { "src": "/documents/audi1.JPG", "alt": "Atharva University Mumbai auditorium photo 1" },
       { "src": "/documents/audi2.JPG", "alt": "Atharva University Mumbai auditorium photo 2" },
-      { "src": "/documents/audi6.jpg", "alt": "Atharva University Mumbai auditorium photo 4" }
     ]
   },
   {

@@ -1018,13 +1018,20 @@ cite {
 }
 .enquiry-form .consent {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   line-height: 1.7;
   font-weight: 400;
 }
+.enquiry-form .consent label {
+  display: inline;
+  margin: 0;
+  font-size: inherit;
+  font-weight: 400;
+  cursor: pointer;
+}
 .consent input {
-  margin-top: 3px;
+  margin-top: 0;
   accent-color: var(--maroon);
   width: 17px;
   height: 17px;

@@ -1,5 +1,20 @@
-import { ArrowUpRight, Instagram } from "lucide-react";
+import { ArrowUpRight, Building2, Clapperboard, Film, Flag, Image, Map, Palette, PartyPopper, Sparkles, Star } from "lucide-react";
 import { Artwork, Icon } from "./UI";
+
+function GalleryIcon({ title }) {
+  const label = title.toLowerCase();
+  const IconComponent = label.includes("bol bol") ? Film
+    : label.includes("journey") ? Map
+    : label.includes("workshop") ? Palette
+    : label.includes("carnival") ? PartyPopper
+    : label.includes("independence") ? Flag
+    : label.includes("auditorium") ? Building2
+    : label.includes("guru") ? Sparkles
+    : label.includes("celebrity") ? Star
+    : label.includes("stage") ? Clapperboard
+    : Image;
+  return <IconComponent size={23} aria-hidden="true" />;
+}
 export function ProgramCard({ program, onSelect }) {
   return (
     <article className="program-card">
@@ -67,7 +82,7 @@ export function GalleryItem({ item, onOpen }) {
     >
       <Artwork src={item.images[0].src} alt={item.images[0].alt} />
       <span className="gallery-overlay">
-        <Instagram size={23} />
+        <GalleryIcon title={item.title} />
         <span>
           {item.title}
           <small>All Play on stage</small>
