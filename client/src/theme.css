@@ -41,6 +41,13 @@ body { background: var(--paper); color: var(--ink); }
 .hero-copy, .hero-tagline, .hero-bottom, .artwork-credit { color: var(--ink); }
 .hero-bottom { border-color: #7d263d33; }
 .hero-tagline > span, .eyebrow > span { background: var(--maroon); }
+.eyebrow:not(:has(> span))::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  flex: 0 0 30px;
+  background: var(--maroon);
+}
 .button, .header-cta { background: var(--gold); border-color: #b98d30; color: var(--ink); }
 .button:hover, .header-cta:hover { background: #e8c360; }
 .button-outline, .button-light { background: #fbf5ebd9; border-color: var(--maroon); color: var(--maroon); }
@@ -96,10 +103,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 /* Storybook details and hand-drawn theatre decorations. */
 h1, h2, h3 { font-family: 'Trebuchet MS', 'Arial Rounded MT Bold', var(--font-sans); font-weight: 700; letter-spacing: -.04em; }
 h1 em, h2 em { font-family: var(--font-display); font-weight: 600; }
+.founder-page .profile-intro h1 em { color: inherit; font-family: inherit; font-size: inherit; font-style: normal; font-weight: inherit; }
 .hero h1 { max-width: 720px; font-size: clamp(3.2rem, 5.3vw, 5rem); }
 .hero-art { object-position: 78% center; }
+.hero-art { filter: brightness(1.12) saturate(1.08); }
 .hero-shade { background: radial-gradient(ellipse at 12% 22%, #b8d8d07d, transparent 44%), radial-gradient(ellipse at 45% 82%, #eab6bd91, transparent 52%), linear-gradient(90deg, #fbf5ebed 0%, #fbf5ebc7 30%, #fbf5eb52 49%, #fbf5eb00 72%); }
-.hero h1 em { text-decoration: underline; text-decoration-color: var(--peach); text-decoration-thickness: 7px; text-underline-offset: 9px; }
+.hero h1 em {
+  padding-inline: .08em;
+  background: #e6bd4b99;
+  border-radius: .12em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  text-decoration: underline;
+  text-decoration-color: var(--peach);
+  text-decoration-thickness: 6px;
+  text-underline-offset: 9px;
+}
 .button, .header-cta { border-radius: 24px 20px 25px 18px; box-shadow: 2px 3px 0 #74475924; }
 .values-strip { border-block: 2px dashed #7d263d35; }
 .section-heading { position: relative; padding-top: 8px; }
@@ -189,9 +208,9 @@ body:has(.home-page) {
 }
 .home-page .hero-shade {
   background:
-    radial-gradient(ellipse at 12% 22%, #b8d8d070, transparent 44%),
-    radial-gradient(ellipse at 45% 82%, #eab6bd70, transparent 52%),
-    linear-gradient(90deg, #fbf5ebed 0%, #f8ece8c7 38%, #edf4ef52 70%, transparent 100%);
+    radial-gradient(ellipse at 12% 22%, #d8e8df50, transparent 44%),
+    radial-gradient(ellipse at 45% 82%, #f2d2d840, transparent 52%),
+    linear-gradient(90deg, #fffaf2ed 0%, #fff7f1bd 35%, #fff7f14a 55%, transparent 76%);
 }
 .home-page .program-card,
 .home-page .event-card,
@@ -201,6 +220,7 @@ body:has(.home-page) {
 .home-page .film-feature {
   background: #f5dfc0;
 }
+.home-page .learning-card { background: #fbf7f0; }
 .home-page .featured-program-card {
   border-color: #b98068;
   box-shadow: 0 10px 24px #74475918;
@@ -225,6 +245,56 @@ body:has(.home-page) {
 }
 .home-page .featured-description-all-play-production {
   background: radial-gradient(ellipse at 100% 0%, #f2d98d 0%, #eab6bd 78%);
+}
+
+/* Keep each featured program card and its opened description on one shared theme. */
+.programs-design .featured-program-card:nth-child(1),
+.programs-design .featured-description-school-of-drama-theatre {
+  background: linear-gradient(135deg, #f6d5df 0%, #eeb9c8 100%);
+}
+.programs-design .featured-program-card:nth-child(2),
+.programs-design .featured-description-all-play-carnival-of-joy {
+  background: linear-gradient(135deg, #fbefc3 0%, #f1d985 100%);
+}
+.programs-design .featured-program-card:nth-child(3),
+.programs-design .featured-description-all-play-production {
+  background: linear-gradient(135deg, #f9dec7 0%, #f2b78e 100%);
+}
+.performances-section.standalone-performances .production-poster-card {
+  background: #f5dfc0;
+}
+.performances-section.standalone-performances .event-card {
+  background: #fffdf8;
+  border: 0;
+}
+.performances-section.standalone-performances .production-description {
+  background: linear-gradient(135deg, #fbefc3 0%, #f2b78e 100%);
+}
+.performances-section.standalone-performances .production-description > h2,
+.performances-section.standalone-performances .production-description > p,
+.performances-section.standalone-performances .production-description .production-credits dd {
+  color: #302321;
+  font-weight: 600;
+}
+.performances-section.standalone-performances .production-description .production-credits dt {
+  color: #641d32;
+  font-weight: 700;
+}
+.home-page .performances-section .production-description {
+  background: linear-gradient(135deg, #fbefc3 0%, #f2b78e 100%);
+}
+.home-page .performances-section .production-description > h2,
+.home-page .performances-section .production-description > p,
+.home-page .performances-section .production-description .production-credits dd {
+  color: #302321;
+  font-weight: 600;
+}
+.home-page .performances-section .production-description .production-credits dt {
+  color: #641d32;
+  font-weight: 700;
+}
+.home-page .home-performances .event-card {
+  background: #fffdf8;
 }
 .home-page .future-grid {
   gap: 20px;
@@ -255,12 +325,12 @@ body:has(.home-page) {
   }
 }
 .home-page .learning-card:hover {
-  border-color: #a54c66;
-  background: #e8c4cf;
+  border-color: var(--maroon);
+  background: #f6eee6;
 }
 .home-page .programs-design.school-outreach-section > .container {
-  border-color: #b98092;
-  background: linear-gradient(145deg, #e8c4cf, #dcaeba);
+  border-color: #e5d8cb;
+  background: #f8f2e9;
 }
 
 /* Carry the home's blended pastel canvas through the standalone pages. */
@@ -300,4 +370,5 @@ body:not(:has(.home-page)) #main .section {
 }
 .home-page .cta-section {
   border-color: #7d263d40;
+  border-top: 0;
 }

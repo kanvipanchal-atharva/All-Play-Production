@@ -35,7 +35,7 @@ export default function About() {
               build self-esteem and find the courage to share their unique
               voices with the world.
             </p>
-            <a className="text-link section-read-more" href="/why-theatre">Read more about the theatre &rarr;</a>
+            <a className="text-link section-read-more" href="/why-theatre">Read more about the theatre ↗</a>
             <div className="highlights">
               {[
                 "Structured Training",
@@ -81,7 +81,7 @@ export default function About() {
               experience for young learners.
             </p>
             <div className="founder-bottom">
-              <a className="text-link" href="/founder">Read more about our founder &rarr;</a>
+              <a className="text-link" href="/founder">Read more about our founder ↗</a>
             </div>
           </Reveal>
         </div>

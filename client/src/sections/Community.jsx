@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp } from "lucide-react";
 import { events, gallery } from "../data";
 import { SectionHeading, Artwork } from "../components/UI";
 import { EventCard, GalleryItem } from "../components/Cards";
@@ -97,7 +97,7 @@ export default function Community({ section, includeGallery = true }) {
                     <img src={poster.src} alt={`${poster.title} production poster`} loading="lazy" />
                     <span className="production-poster-copy">
                       <strong>{poster.title}</strong>
-                      <span className="text-link">{isActive ? "Hide description" : "Read description"} <ArrowRight size={16} /></span>
+                      <span className="text-link">Read more {isActive ? <ArrowUp size={16} /> : <ArrowDown size={16} />}</span>
                     </span>
                   </button>
                 </div>

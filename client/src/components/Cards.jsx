@@ -1,4 +1,4 @@
-import { ArrowUpRight, Building2, Clapperboard, Film, Flag, Image, Map, Palette, PartyPopper, Sparkles, Star } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Building2, Clapperboard, Film, Flag, Image, Map, Palette, PartyPopper, Sparkles, Star } from "lucide-react";
 import { Artwork, Icon } from "./UI";
 
 function GalleryIcon({ title }) {
@@ -54,7 +54,18 @@ export function LearningCard({ item, index }) {
 }
 export function EventCard({ event, onOpen }) {
   return (
-    <article className="event-card">
+    <article
+      className="event-card"
+      role="button"
+      tabIndex={0}
+      onClick={() => onOpen(event)}
+      onKeyDown={(keyboardEvent) => {
+        if (keyboardEvent.key === "Enter" || keyboardEvent.key === " ") {
+          keyboardEvent.preventDefault();
+          onOpen(event);
+        }
+      }}
+    >
       <div className="card-image">
         <Artwork
           src={event.image}
@@ -66,9 +77,9 @@ export function EventCard({ event, onOpen }) {
         <p className="sample-label">{event.date}</p>
         <h3>{event.title}</h3>
         <p>{event.description}</p>
-        <button className="text-link" onClick={() => onOpen(event)}>
-          View Highlights <ArrowUpRight size={17} />
-        </button>
+        <span className="text-link">
+          Read more <ArrowRight size={17} />
+        </span>
       </div>
     </article>
   );
@@ -87,7 +98,7 @@ export function GalleryItem({ item, onOpen }) {
           {item.title}
           <small>All Play on stage</small>
         </span>
-        <ArrowUpRight size={20} />
+        <ArrowRight size={20} />
       </span>
     </button>
   );

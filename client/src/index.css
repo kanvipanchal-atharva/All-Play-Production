@@ -200,7 +200,7 @@ textarea:focus-visible {
   background: none;
   border: 0;
   padding: 8px 0;
-  border-bottom: 1px solid #b99d6a;
+  text-decoration: none;
 }
 .text-link:hover {
   color: var(--maroon);

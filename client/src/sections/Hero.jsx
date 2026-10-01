@@ -1,4 +1,3 @@
-import { ArrowDown } from "lucide-react";
 import { PrimaryButton } from "../components/UI";
 export default function Hero() {
   return (
@@ -33,15 +32,6 @@ export default function Hero() {
           </PrimaryButton>
         </div>
       </div>
-      <div className="hero-bottom container">
-        <a href="#about">
-          <ArrowDown size={16} /> SCROLL TO DISCOVER
-        </a>
-        <span>IMAGINE. EXPRESS. BECOME.</span>
-      </div>
-      <span className="artwork-credit">
-        IMAGINATION TAKES FLIGHT
-      </span>
     </section>
   );
 }

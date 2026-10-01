@@ -15,7 +15,7 @@ export default function FounderPage() {
           </figure>
         </div>
         <div className="founder-impact" aria-label="Career and community impact">
-          <div><strong>22 years</strong><span>with Air India</span></div>
+          <div><strong>22+ years</strong><span>with Air India</span></div>
           <div><strong>600+</strong><span>young people trained</span></div>
           <div><strong>50+</strong><span>productions created</span></div>
         </div>
@@ -50,7 +50,7 @@ export default function FounderPage() {
             <p className="eyebrow">LOOKING AHEAD</p>
             <h2>More stories, <em>more stages</em></h2>
             <p>Her creative ambitions include film festivals and future feature film, television and web series productions.</p>
-            <a className="text-link" href="/performances">Explore her theatre and film work &rarr;</a>
+            <a className="text-link" href="/performances">Explore her theatre and film work ↗</a>
           </section>
         </div>
       </div>

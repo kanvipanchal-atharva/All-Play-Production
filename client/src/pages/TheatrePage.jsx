@@ -37,8 +37,8 @@ export default function TheatrePage() {
             <p>Contact us to learn about available programs and upcoming opportunities.</p>
           </section>
           <div className="button-row">
-            <a className="button" href="/contact">Enquire About Programs &rarr;</a>
-            <a className="text-link" href="/founder">Meet Our Founder &rarr;</a>
+            <a className="button" href="/contact">Enquire About Programs ↗</a>
+            <a className="text-link" href="/founder">Meet Our Founder ↗</a>
           </div>
         </div>
       </div>

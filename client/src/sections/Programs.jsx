@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ArrowDown, ArrowUp } from "lucide-react";
 import { SectionHeading, Reveal } from "../components/UI";
 import { ProgramCard, LearningCard } from "../components/Cards";
 import { programs, learning } from "../data";
@@ -22,7 +23,7 @@ const featuredPrograms = [
 export default function Programs({ onSelect }) {
   const [activeProgram, setActiveProgram] = useState(null);
   const showProgramDescription = (programId) => {
-    setActiveProgram(programId);
+    setActiveProgram((currentProgram) => currentProgram === programId ? null : programId);
   };
   return (
     <>
@@ -43,7 +44,7 @@ export default function Programs({ onSelect }) {
               <button className="featured-program-card" key={program.id} type="button" onClick={() => showProgramDescription(program.id)} aria-controls={`${program.id}-description`} aria-expanded={activeProgram === program.id}>
                 <span className="eyebrow">EXPLORE</span>
                 <h2>{program.title}</h2>
-                <span className="text-link">Read more ↓</span>
+                <span className="text-link">Read more {activeProgram === program.id ? <ArrowUp size={16} /> : <ArrowDown size={16} />}</span>
               </button>
             ))}
           </div>
@@ -109,7 +110,7 @@ export default function Programs({ onSelect }) {
             A First Step <em>onto the Stage</em>
           </SectionHeading>
           <p>The school presentation lasts approximately 1 to 1.5 hours. It introduces children to drama, creative expression and the rich theatre culture of Maharashtra.</p>
-          <a className="text-link" href="/contact#contact">Enquire about a school presentation &rarr;</a>
+          <a className="text-link" href="/contact#contact">Enquire about a school presentation ↗</a>
         </div>
       </section>
       <section className="section learning-section programs-design">
