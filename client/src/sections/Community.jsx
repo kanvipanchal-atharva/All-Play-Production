@@ -17,7 +17,7 @@ const productionPosters = [
     src: "/documents/school.png",
     title: "मी नाही जाणार शाळेला",
     description: "The story of a little girl's fight against the education system.",
-    credits: "Vishal Sobavne",
+    credits: "Vishal Sonavne",
   },
   {
     id: "kshitijachya-palikade",
