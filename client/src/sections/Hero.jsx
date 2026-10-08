@@ -22,7 +22,7 @@ export default function Hero() {
           Artist <em>Within You</em>
         </h1>
         <p className="hero-copy">
-          Theatre training for young imaginations. Build confidence, find your
+          Drama &amp; Theatre training for young imaginations. Build confidence, find your
           voice and discover the joy of performance.
         </p>
         <div className="button-row">

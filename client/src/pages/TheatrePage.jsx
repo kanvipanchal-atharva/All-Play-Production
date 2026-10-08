@@ -5,15 +5,15 @@ export default function TheatrePage() {
         <div className="profile-intro">
           <div>
             <p className="eyebrow">ABOUT THE THEATRE</p>
-            <h1>All Play… <em>A Carnival of Joy</em></h1>
+            <h1>All Play...<em>A Carnival of Joy !</em></h1>
             <p className="profile-lead">Every child matters. Every voice deserves a stage.</p>
-            <p>Created by Mrs. Varsha Rane and supported by Atharva Foundation, All Play Productions brings children and young people together through the transformative power of drama and theatre.</p>
+            <p>Created by Mrs. Varshaa Raane and supported by Atharva Foundation, All Play Productions brings children and young people together through the transformative power of drama and theatre.</p>
           </div>
           <img src="/Demo.jpeg" width="1600" height="1068" alt="Young All Play performers sharing the stage" />
         </div>
         <div className="theatre-stats" aria-label="Our impact">
           <div><strong>600+</strong><p>School students and college youth trained</p></div>
-          <div><strong>50+</strong><p>Productions created under Mrs. Rane’s guidance</p></div>
+          <div><strong>50+</strong><p>Productions created under Mrs. Varshaa Raane’s guidance</p></div>
         </div>
         <div className="profile-body">
           <section>
@@ -29,7 +29,7 @@ export default function TheatrePage() {
           <section>
             <h2>From Local Stages to <em>Wider Opportunities</em></h2>
             <p>Young performers have participated in state-level and international competitions. All Play’s journey includes Maharashtra Rajya Balnatya Spardha, Jhankriti, industry encounters and live set visits.</p>
-            <p>In-house productions include “Kshitijachya Palikade”, “Ghonga Basant”, “Mi Nahi Janaar Shalela” and “Deva Shree Ganesha”, which Mrs. Rane wrote and directed.</p>
+            <p>In-house productions include “Kshitijachya Palikade”, “Ghonga Basant”, “Mi Nahi Janaar Shalela” and “Deva Shree Ganesha”, which Mrs. Varshaa Raane wrote and directed.</p>
           </section>
           <section>
             <h2>The Next <em>Chapter</em></h2>

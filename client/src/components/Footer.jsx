@@ -111,7 +111,7 @@ export default function Footer({ onPolicy }) {
       </div>
       <div className="container footer-founder-credit">
         <span>Founded by</span>
-        <strong>Mrs. Varsha Rane</strong>
+        <strong>Mrs. Varshaa Raane</strong>
       </div>
       <div className="container footer-bottom">
         <span>

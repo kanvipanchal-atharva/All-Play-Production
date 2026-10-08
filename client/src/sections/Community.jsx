@@ -10,7 +10,7 @@ const productionPosters = [
     src: "/documents/shriGanesha.jpeg",
     title: "देवा श्री गणेशा",
     description: "When the elders decide not to celebrate Ganeshotsav due to conflicts between themselves, the children decide to celebrate the festival with their innocence, enthusiasm and love for Bappa.",
-    credits: "Mrs. Varshaa Rane",
+    credits: "Mrs. Varshaa Raane",
   },
   {
     id: "mi-nahi-janar-shalela",
@@ -24,7 +24,7 @@ const productionPosters = [
     src: "/documents/kshitija.jpeg",
     title: "क्षितिजाच्या पलिकडे",
     description: "A young girl visits her father in a village during her vacation. As she gets to know the villagers and understands their struggles, she takes initiative to help them overcome their challenges and bring change.",
-    credits: "Written by: Dhananjay Sardeshpande | Directed by: Mrs. Varshaa Rane",
+    credits: "Written by: Dhananjay Sardeshpande | Directed by: Mrs. Varshaa Raane",
     venue: "Prabodhankar Keshav Sitaram Thackeray Natya Mandir, Chhatrapati Shivaji Maharaj Natyamandir",
   },
   {

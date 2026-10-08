@@ -10,10 +10,9 @@ export default function About() {
             <Doodle kind="kite" className="collage-doodle" />
             <div className="collage-main">
               <Artwork
-                src="/Demo.jpeg"
-                alt="Children performing together on stage at All Play Productions"
+                src="/documents/founderChild.jpg"
+                alt="Children raising their hands during an All Play workshop"
               />
-              <span className="image-label">ROOM FOR EVERY IMAGINATION</span>
             </div>
             <div className="collage-small">
               <Artwork
@@ -29,8 +28,7 @@ export default function About() {
               Meets <em>Confidence</em>
             </SectionHeading>
             <p>
-              All Play Productions, in association with Atharva Foundation,
-              introduces children to drama and performing arts through fun and
+              All Play Productions introduces children to drama and performing arts through fun and
               joy. Our workshops help children discover their individuality,
               build self-esteem and find the courage to share their unique
               voices with the world.
@@ -39,8 +37,8 @@ export default function About() {
             <div className="highlights">
               {[
                 "Structured Training",
-                "Creative Expression",
-                "Live Performances",
+                "Creative Exposure",
+                "Live Performances & Silhouette Performance",
                 "Skills for Life",
               ].map((text) => (
                 <span key={text}>
@@ -49,6 +47,10 @@ export default function About() {
                 </span>
               ))}
             </div>
+            <div className="about-impact" aria-label="All Play impact">
+              <div><strong>600+</strong><span>young people trained</span></div>
+              <div><strong>50+</strong><span>productions created</span></div>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -56,27 +58,27 @@ export default function About() {
         className="section founder-section"
         aria-labelledby="founder-title"
       >
-        <div className="container founder-layout">
+        <div className="founder-layout">
           <Reveal className="portrait-frame">
             <Artwork
-              src="/founder-varsha-rane.jpeg"
-              alt="Mrs. Varsha Rane, Founder and Creator of All Play Productions"
+              src="/documents/founder%20landscape.png"
+              alt="Mrs. Varshaa Raane, Founder and Creator of All Play Productions"
             />
           </Reveal>
-          <Reveal>
+          <Reveal className="founder-copy">
             <p className="eyebrow">
               <span />
-              THE HEART BEHIND ALL PLAY
+              THE HEART BEHIND ALL PLAY PRODUCTIONS
             </p>
             <h2 id="founder-title">
               Meet Our <em>Founder</em>
             </h2>
-            <h3 className="founder-name">Mrs. Varsha Rane</h3>
+            <h3 className="founder-name">Mrs. Varshaa Raane</h3>
             <p className="founder-role">
-              Founder & Creator, All Play Productions · Vice Chairman, Atharva Foundation
+              Trustee - Atharva University Mumbai · Founder & Creator - All Play Productions · Vice Chairman - Atharva Foundation
             </p>
             <p>
-              Actor, filmmaker and advocate for creative education. Mrs. Varsha Rane created
+              Actor, filmmaker and advocate for creative education. Mrs. Varshaa Raane created
               All Play Productions to make performing arts an empowering
               experience for young learners.
             </p>

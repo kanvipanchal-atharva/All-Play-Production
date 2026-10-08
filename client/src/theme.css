@@ -125,13 +125,14 @@ h1 em, h2 em { font-family: var(--font-display); font-weight: 600; }
 .doodle { width: 84px; height: 100px; pointer-events: none; }
 .heading-doodle { width: 38px; height: 42px; margin-bottom: 5px; transform: rotate(-12deg); }
 .doodle-rail { position: fixed; inset: 95px 0 30px; pointer-events: none; z-index: 19; overflow: hidden; }
-.side-doodle { position: absolute; width: clamp(36px, 5vw, 76px); height: 100px; opacity: .8; animation: doodle-bob 7s ease-in-out infinite alternate; }
-.side-doodle-1 { left: 5px; top: 3%; }
-.side-doodle-2 { right: 5px; top: 8%; animation-delay: -3s; }
-.side-doodle-3 { left: 6px; top: 42%; animation-delay: -5s; }
-.side-doodle-4 { right: 5px; top: 44%; animation-delay: -1s; }
-.side-doodle-5 { left: 7px; bottom: 3%; animation-delay: -4s; }
-.side-doodle-6 { right: 5px; bottom: 9%; animation-delay: -2s; }
+.side-doodle { position: absolute; width: clamp(36px, 5vw, 76px); height: 100px; opacity: .8; pointer-events: auto; cursor: pointer; transform-origin: center; animation: doodle-bob 7s ease-in-out infinite alternate; transition: color .2s ease, filter .2s ease; }
+.side-doodle-1 { left: 5px; top: 4%; }
+.side-doodle-2 { right: 5px; top: 16%; animation-delay: -3s; }
+.side-doodle-3 { left: 6px; top: 39%; animation-delay: -5s; }
+.side-doodle-4 { right: 5px; top: 55%; animation-delay: -1s; }
+.side-doodle-5 { left: 7px; bottom: 12%; animation-delay: -4s; }
+.side-doodle-6 { right: 5px; bottom: 2%; animation-delay: -2s; }
+.side-doodle:hover { color: var(--maroon); filter: hue-rotate(35deg) saturate(1.45); animation-play-state: paused; }
 @keyframes doodle-bob { from { transform: translateY(-6px) rotate(-7deg); } to { transform: translateY(7px) rotate(7deg); } }
 .program-card, .event-card { border: 2px solid var(--border); border-radius: 23px 18px 26px 19px; box-shadow: 4px 5px 0 #7d263d10; }
 .badge { border-radius: 12px 9px 13px 8px; }
@@ -179,6 +180,7 @@ h1 em, h2 em { font-family: var(--font-display); font-weight: 600; }
 }
 @media (prefers-reduced-motion: reduce) {
   .side-doodle { animation: none; }
+  .side-doodle:hover { filter: hue-rotate(35deg) saturate(1.45); }
 }
 
 /* Home uses one continuous pastel canvas, rather than alternating paper and colour blocks. */
@@ -225,15 +227,6 @@ body:has(.home-page) {
   border-color: #b98068;
   box-shadow: 0 10px 24px #74475918;
 }
-.home-page .featured-program-card:nth-child(1) {
-  background: radial-gradient(ellipse at 100% 0%, #f2d98d 0%, #eab6bd 78%);
-}
-.home-page .featured-program-card:nth-child(2) {
-  background: radial-gradient(ellipse at 100% 0%, #f2d98d 0%, #eab6bd 78%);
-}
-.home-page .featured-program-card:nth-child(3) {
-  background: radial-gradient(ellipse at 100% 0%, #f2d98d 0%, #eab6bd 78%);
-}
 .home-page .featured-program-description,
 .home-page .production-description,
 .home-page .batch-panel,
@@ -248,15 +241,15 @@ body:has(.home-page) {
 }
 
 /* Keep each featured program card and its opened description on one shared theme. */
-.programs-design .featured-program-card:nth-child(1),
+.programs-design .featured-program-card-school-of-drama-theatre,
 .programs-design .featured-description-school-of-drama-theatre {
-  background: linear-gradient(135deg, #f6d5df 0%, #eeb9c8 100%);
-}
-.programs-design .featured-program-card:nth-child(2),
-.programs-design .featured-description-all-play-carnival-of-joy {
   background: linear-gradient(135deg, #fbefc3 0%, #f1d985 100%);
 }
-.programs-design .featured-program-card:nth-child(3),
+.programs-design .featured-program-card-all-play-carnival-of-joy,
+.programs-design .featured-description-all-play-carnival-of-joy {
+  background: linear-gradient(135deg, #f6d5df 0%, #eeb9c8 100%);
+}
+.programs-design .featured-program-card-all-play-production,
 .programs-design .featured-description-all-play-production {
   background: linear-gradient(135deg, #f9dec7 0%, #f2b78e 100%);
 }

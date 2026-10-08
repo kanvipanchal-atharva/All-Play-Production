@@ -5,18 +5,18 @@ import { ProgramCard, LearningCard } from "../components/Cards";
 import { programs, learning } from "../data";
 const featuredPrograms = [
   {
+    id: "all-play-carnival-of-joy",
+    title: "All Play...A Carnival of Joy !",
+    description: "A theatre carnival celebrating every child's chance to explore, express and perform, supported by Atharva Foundation.",
+  },
+  {
     id: "school-of-drama-theatre",
     title: "School of Drama & Theatre",
     description: "A half-year drama course for young performers, with in-depth training and a final presentation at Atharva auditorium.",
   },
   {
-    id: "all-play-carnival-of-joy",
-    title: "All Play A Carnival of Joy",
-    description: "A theatre carnival celebrating every child's chance to explore, express and perform, supported by Atharva Foundation.",
-  },
-  {
     id: "all-play-production",
-    title: "All Play Production",
+    title: "All Play Productions",
     description: "A woman blessed with mystical powers has always struggled to live a “normal” life. Different from those around her, she often finds herself misunderstood and unaccepted by society. Her deeply personal journey explores resilience, vulnerability, and the courage to embrace her true self.",
   },
 ];
@@ -41,7 +41,7 @@ export default function Programs({ onSelect }) {
         <div className="container">
           <div className="featured-programs-grid">
             {featuredPrograms.map((program) => (
-              <button className="featured-program-card" key={program.id} type="button" onClick={() => showProgramDescription(program.id)} aria-controls={`${program.id}-description`} aria-expanded={activeProgram === program.id}>
+              <button className={`featured-program-card featured-program-card-${program.id}`} key={program.id} type="button" onClick={() => showProgramDescription(program.id)} aria-controls={`${program.id}-description`} aria-expanded={activeProgram === program.id}>
                 <span className="eyebrow">EXPLORE</span>
                 <h2>{program.title}</h2>
                 <span className="text-link">Read more {activeProgram === program.id ? <ArrowUp size={16} /> : <ArrowDown size={16} />}</span>
@@ -54,18 +54,21 @@ export default function Programs({ onSelect }) {
                 <h2>{program.title}</h2>
                 {program.id === "school-of-drama-theatre" ? (
                   <div className="drama-course-details">
-                    <p>Thank you for your interest in All Play Productions’ School of Drama & Theatre!</p>
-                    <h3>Half-Year Drama Course</h3>
+                    <p>Thank you for your interest in All Play Productions’ School of Drama &amp; Theatre!</p>
+                    <p>A unique theatre school for children and young people, dedicated to nurturing their creativity, confidence and performance skills while introducing them to Maharashtra’s rich and age-old theatrical tradition.</p>
+                    <p>The programme aims to preserve and pass on this cultural heritage to the younger generation, helping them explore the intelligence, wit, creativity and expressive traditions that define Marathi theatre.</p>
+                    <h3>Course Highlights</h3>
                     <ul>
-                      <li><strong>Age groups:</strong> 7–14 years and 15–19 years</li>
-                      <li><strong>Sessions:</strong> Three times a week: two weekday sessions and one Sunday session</li>
-                      <li>35 in-depth drama sessions</li>
-                      <li>Final presentation at Atharva auditorium with a certificate</li>
-                      <li>Limited seats in each batch</li>
+                      <li><strong>Age Groups:</strong> 7–14 years and 15–19 years</li>
+                      <li><strong>In-depth Drama Training:</strong> 21 focused drama sessions</li>
+                      <li><strong>Final Presentation:</strong> A 45-minute performance at Atharva’s prestigious auditorium</li>
+                      <li><strong>Certificate:</strong> Certificate awarded upon completion</li>
+                      <li><strong>Limited Seats:</strong> Small batches for focused learning</li>
+                      <li><strong>Performance Opportunities:</strong> Opportunities to participate in in-house theatre and film productions</li>
                     </ul>
+                    <p>This programme offers a valuable opportunity for young performers to Learn · Express · Perform · Grow while experiencing the world of theatre firsthand. 🎭✨</p>
                     <p><strong>Venue:</strong> The Village, Art and Culture Centre, Kora Kendra Hall, Shimpoli Road, Borivali West, Mumbai</p>
                     <p><strong>Contact:</strong> <a href="tel:9082244109">9082244109</a> | <a href="tel:9930255054">9930255054</a> | <a href="tel:9167967756">9167967756</a></p>
-                    <p className="drama-course-motto">Learn · Express · Perform · Grow 🎭✨</p>
                   </div>
                 ) : program.id === "all-play-production" ? (
                   <div className="drama-course-details">
