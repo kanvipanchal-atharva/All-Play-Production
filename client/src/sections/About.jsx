@@ -1,13 +1,11 @@
 import { Check } from "lucide-react";
 import { Artwork, Reveal, SectionHeading } from "../components/UI";
-import { Doodle } from "../components/Doodles";
 export default function About() {
   return (
     <>
       <section id="about" className="section about-section">
         <div className="container split">
           <Reveal className="about-collage">
-            <Doodle kind="kite" className="collage-doodle" />
             <div className="collage-main">
               <Artwork
                 src="/documents/founderChild.jpg"
@@ -22,16 +20,16 @@ export default function About() {
             </div>
           </Reveal>
           <Reveal>
-            <SectionHeading eyebrow="THE ALL PLAY STORY">
+            <SectionHeading eyebrow="THE ALL PLAY PRODUCTIONS STORY">
               Where Creativity
               <br />
               Meets <em>Confidence</em>
             </SectionHeading>
             <p>
-              All Play Productions introduces children to drama and performing arts through fun and
-              joy. Our workshops help children discover their individuality,
-              build self-esteem and find the courage to share their unique
-              voices with the world.
+              All Play Productions introduces children to drama and the performing arts through fun, creativity and joy. Our workshops help children discover their individuality, build self-esteem and find the courage to share their unique voices with the world.
+            </p>
+            <p>
+              We sincerely appreciate the support, guidance and commitment of the Atharva University team in helping us nurture young talent and bring their creativity to life. Together, we aspire to empower the next generation of performers, develop their artistic potential and create a meaningful mark in the vast world of entertainment.
             </p>
             <a className="text-link section-read-more" href="/why-theatre">Read more about the theatre ↗</a>
             <div className="highlights">

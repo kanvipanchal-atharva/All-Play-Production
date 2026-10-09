@@ -138,6 +138,7 @@ p { line-height: 1.75; }
 .gallery-overlay { padding: 15px; }
 .gallery-overlay small { display: none; }
 .cta-section { padding: 58px 0; }
+.cta-section .eyebrow::before { display: none; }
 .cta-section h2 { font-size: clamp(2.5rem, 4vw, 3.7rem); }
 .cta-section p:not(.eyebrow) { margin: 20px auto; }
 .contact-layout { gap: 70px; }
@@ -508,7 +509,7 @@ p { line-height: 1.75; }
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
-  max-width: 500px;
+  max-width: 680px;
   margin-top: 30px;
   padding-top: 21px;
   border-top: 1px solid #d9c9bb;
@@ -622,7 +623,8 @@ p { line-height: 1.75; }
 .founder-intro-copy { max-width: 650px; }
 .founder-intro-copy .eyebrow { color: var(--maroon); }
 .founder-page .profile-intro h1 { font-size: clamp(48px, 6.5vw, 82px); }
-.founder-page .profile-intro .profile-lead { max-width: 520px; font-family: var(--font-display); font-size: 24px; line-height: 1.4; }
+.founder-page .profile-intro .profile-lead { max-width: 760px; font-family: var(--font-display); font-size: 14px; line-height: 1.5; }
+.founder-page .founder-role-primary { white-space: nowrap; }
 .founder-page .founder-intro-copy > p:last-child { max-width: 620px; color: #665c54; font-size: 16px; }
 .founder-portrait {
   position: relative;
@@ -713,7 +715,8 @@ p { line-height: 1.75; }
   .founder-page { padding-top: 108px; }
   .founder-page .founder-intro { grid-template-columns: 1fr; gap: 28px; margin: 24px 0 30px; }
   .founder-page .profile-intro h1 { font-size: clamp(46px, 12vw, 64px); }
-  .founder-page .profile-intro .profile-lead { font-size: 21px; }
+  .founder-page .profile-intro .profile-lead { font-size: 14px; }
+  .founder-page .founder-role-primary { white-space: normal; }
   .founder-page .founder-intro-copy > p:last-child { font-size: 15px; }
   .founder-portrait { width: min(100%, 390px); margin: 0 auto; }
   .founder-impact { margin-bottom: 36px; padding: 19px 0; }
@@ -800,6 +803,37 @@ p { line-height: 1.75; }
 }
 
 .home-performances { background: #f4eee7; }
+.puppet-show { overflow: hidden; padding: 52px 0 48px; background: transparent; }
+.puppet-show .section-heading { margin-bottom: 30px; text-align: left; }
+.puppet-stage { position: relative; left: 50%; isolation: isolate; width: min(calc(100vw - 40px), 1440px); min-height: 400px; padding: 0 44px 54px; overflow: hidden; border: 1px solid #814753; border-radius: 18px; background: radial-gradient(ellipse at 50% 0%, #7c3448 0%, #4a202f 62%, #311722 100%); box-shadow: 0 18px 38px #45202b25; transform: translateX(-50%); }
+.puppet-stage::before { position: absolute; z-index: 2; inset: 0 0 auto; height: 34px; background: repeating-linear-gradient(90deg, #b75464 0 34px, #963f53 35px 68px); box-shadow: 0 7px 12px #1b0c123d; content: ""; pointer-events: none; }
+.puppet-scroll-viewport { overflow: hidden; padding-bottom: 22px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
+.puppet-gallery { position: relative; z-index: 1; display: flex; width: max-content; animation: puppet-scroll 68s linear infinite; }
+.puppet-scroll-viewport:hover .puppet-gallery { animation-play-state: paused; }
+.puppet-gallery-set { display: flex; align-items: flex-start; gap: clamp(20px, 4vw, 54px); margin-right: clamp(20px, 4vw, 54px); }
+.puppet-photo { position: relative; display: flex; flex-direction: column; align-items: center; min-width: 0; margin: 0; transform-origin: 50% 0; animation: puppet-sway 3.8s ease-in-out var(--puppet-delay) infinite alternate; }
+.puppet-photo { width: clamp(122px, 15vw, 166px); }
+.puppet-photo:nth-child(even) { margin-top: 22px; animation-duration: 4.4s; }
+.puppet-strings { position: relative; display: block; width: 2px; height: 82px; background: linear-gradient(#f3d69c, #c99b67); }
+.puppet-strings::before { position: absolute; top: 0; left: 50%; width: 28px; height: 3px; border-radius: 50%; background: #f4d99e; content: ""; transform: translateX(-50%); }
+.puppet-frame { display: block; width: 100%; padding: 7px; border: 1px solid #eacb8b; border-radius: 5px; background: #fff4dc; box-shadow: 0 10px 18px #1b0d144d; }
+.puppet-frame img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 2px; }
+.puppet-stage-lights { position: absolute; inset: 45% 0 0; z-index: -1; background: radial-gradient(ellipse at 50% 100%, #f0c77f2b, transparent 60%); pointer-events: none; }
+@keyframes puppet-sway { from { transform: rotate(-4deg) translateY(0); } to { transform: rotate(4deg) translateY(5px); } }
+@keyframes puppet-scroll { to { transform: translateX(-50%); } }
+@media (max-width: 680px) {
+  .puppet-show { padding: 40px 0 34px; }
+  .puppet-show .section-heading { margin-bottom: 22px; }
+  .puppet-stage { min-height: 330px; padding: 0 14px 38px; }
+  .puppet-photo { width: 126px; }
+  .puppet-photo:nth-child(even) { margin-top: 14px; }
+  .puppet-strings { height: 72px; }
+  .puppet-frame { padding: 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .puppet-gallery { animation: none; }
+  .puppet-photo { animation: none; }
+}
 .performances-section .production-poster-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin-bottom: 24px; align-items: stretch; }
 .production-poster-item { display: flex; min-width: 0; }
 .production-poster-card {
@@ -821,6 +855,14 @@ p { line-height: 1.75; }
 }
 .production-poster-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px #3f271015; }
 .production-poster-card > img { width: 100%; height: 100%; object-fit: cover; object-position: center; background: transparent; }
+.production-poster-flip { position: relative; display: block; width: 100%; height: 100%; min-height: 230px; perspective: 1000px; }
+.production-poster-flip > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; backface-visibility: hidden; transition: transform .6s ease; }
+.production-poster-flip .production-poster-front { transform: rotateY(0deg); }
+.production-poster-flip .production-poster-back { transform: rotateY(180deg); }
+.production-poster-card:hover .production-poster-front,
+.production-poster-card:focus-visible .production-poster-front { transform: rotateY(-180deg); }
+.production-poster-card:hover .production-poster-back,
+.production-poster-card:focus-visible .production-poster-back { transform: rotateY(0deg); }
 .production-poster-copy { display: grid; align-content: start; padding: 14px 12px 16px; text-align: center; }
 .production-poster-copy > small { color: var(--maroon); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .production-poster-copy > strong { overflow: hidden; font-family: var(--font-display); font-size: 15px; line-height: 1.3; white-space: nowrap; text-overflow: ellipsis; }

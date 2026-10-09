@@ -119,6 +119,16 @@ export const gallery = [
       { "src": "/documents/SanjayKhapare1.JPG", "alt": "Sanjay Khapare at All Play Productions, photo 1", "title": "Celebrity Visit - Sanjay Khapare" },
       { "src": "/documents/SanjayKhapare2.JPG", "alt": "Sanjay Khapare at All Play Productions, photo 2", "title": "Celebrity Visit - Sanjay Khapare" }
     ]
+  },
+  {
+    "id": 9,
+    "title": "Shimpoli Hall",
+    "images": [
+      { "src": "/documents/shimpoliHall1.jpeg", "alt": "Shimpoli hall photo 1" },
+      { "src": "/documents/shimpoliHall2.jpeg", "alt": "Shimpoli hall photo 2" },
+      { "src": "/documents/shimpoliHall3.jpeg", "alt": "Shimpoli hall photo 3" },
+      { "src": "/documents/shimpoliHall4.jpeg", "alt": "Shimpoli hall photo 4" }
+    ]
   }
 ];
 

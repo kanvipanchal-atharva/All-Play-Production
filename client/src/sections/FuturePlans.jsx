@@ -14,7 +14,6 @@ export default function FuturePlans() {
       <div className="container">
         <SectionHeading
           eyebrow="LOOKING AHEAD"
-          description="Our leaflet sets out these future plans. Contact us for updates on availability."
         >
           <span id="future-title">More Ways to <em>Create</em></span>
         </SectionHeading>

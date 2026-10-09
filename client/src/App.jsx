@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer, { FloatingActions } from "./components/Footer";
 import Modal from "./components/Modal";
 import Hero from "./sections/Hero";
+import PuppetShow from "./sections/PuppetShow";
 import About from "./sections/About";
 import Programs from "./sections/Programs";
 import WhyTheatre from "./sections/WhyTheatre";
@@ -66,10 +67,11 @@ export default function App() {
           <span>THE JOY OF THEATRE</span>
         </div>
         <About />
-        <Programs onSelect={setSelectedProgram} />
+        <Programs onSelect={setSelectedProgram} hideIntroDescription />
         <WhyTheatre />
         <Community includeGallery={false} />
         <FuturePlans />
+        <PuppetShow />
         <ContactCallToAction />
         </>}
       </main>

@@ -6,8 +6,8 @@ export default function FounderPage() {
           <div className="founder-intro-copy">
             <p className="eyebrow">THE HEART BEHIND ALL PLAY PRODUCTIONS</p>
             <h1>Mrs. Varshaa <em>Raane</em></h1>
-            <p className="profile-lead">Founder, creator and a champion of young voices.</p>
-            <p>A visionary and changemaker, Mrs. Varshaa Raane empowers children and youth through creative fields such as theatre and cinema. By creating inclusive platforms for rural and tribal children across Maharashtra, she nurtures confidence, personality development, and the courage to express themselves fearlessly through creativity.</p>
+            <p className="profile-lead"><strong><span className="founder-role-primary">Trustee - Atharva University Mumbai · Founder &amp; Creator - All Play Productions ·</span><br />Vice Chairman - Atharva Foundation</strong></p>
+            <p>Mrs. Varshaa Raane is a visionary, changemaker and passionate advocate of the performing arts who empowers children and young people through theatre, cinema and creative expression. Her work focuses on nurturing confidence, developing personalities and creating inclusive opportunities for rural, tribal and underprivileged children across Maharashtra.</p>
           </div>
           <figure className="founder-portrait">
             <img src="/founder-varsha-rane.jpeg" width="959" height="1280" alt="Mrs. Varshaa Raane, Founder and Creator of All Play Productions" />
@@ -22,35 +22,27 @@ export default function FounderPage() {
         <div className="profile-body founder-story">
           <section>
             <h2>From Aviation to <em>the Arts</em></h2>
-            <p>Born and raised in Mumbai, Mrs. Varshaa Raane served with Air India as an air hostess for 22 years. Her love of the stage began at school and grew into training in Marathi, Hindi and English theatre with Nadira Babbar, Divya Palat, Ashok Purang and Prof. Vaman Kendre.</p>
-            <p>She also completed courses at FTII in direction, storytelling, acting, photography and filmmaking. In 2024, she founded a School of Theatre and Drama in Mumbai for children and young adults.</p>
+            <p>Born and raised in Mumbai, Mrs. Raane served with Air India as an air hostess for 22 years before pursuing her passion for theatre. She trained in Marathi, Hindi and English theatre under renowned mentors, including Nadira Babbar, Divya Palat, Ashok Purang and Prof. Vaman Kendre. She also completed courses at FTII in direction, storytelling, acting, photography and filmmaking. In 2024, she established a School of Theatre and Drama in Mumbai for children and young adults.</p>
           </section>
           <section>
-            <h2>Leadership with <em>Purpose</em></h2>
-            <p>Mrs. Varshaa Raane serves as a Trustee of Atharva University, Mumbai, and Vice Chairman of Atharva Foundation, Mumbai. Under her leadership, the Foundation drives social, educational, cultural and community initiatives.</p>
-            <p>As Founder and Creator of All Play Productions, she is the force behind “All Play...A Carnival of Joy !”, supported by Atharva Foundation. The initiative grew from a simple belief: every child matters, and the world holds limitless opportunities to explore.</p>
+            <h2>Leadership &amp; <em>Social Impact</em></h2>
+            <p>As Founder and Creator of All Play Productions, Vice Chairman of Atharva Foundation and Trustee of Atharva University, Mumbai, Mrs. Raane combines artistic vision with social responsibility.</p>
+            <p>Her initiative, “All Play…A Carnival of Joy,” supported by Atharva Foundation, introduces underprivileged children to theatre as a means of self-discovery, confidence-building and fearless expression. Beginning with rural and tribal communities in Gorai, Manori and Borivali, the programme creates opportunities for children to discover their talents and express themselves with confidence.</p>
+            <p>Under her guidance, over 600 students have received theatre training, and more than 50 productions have been created. Her students have participated in state, national and international competitions and experienced opportunities within the professional entertainment industry.</p>
           </section>
           <section>
-            <h2>Art, Confidence and <em>Well-being</em></h2>
-            <p>A theatre patron and artist, Mrs. Varshaa Raane is also a certified life coach. She conducts seminars and workshops on physical, mental and emotional well-being, encouraging people to create the life they desire.</p>
-            <p>Her work with children uses theatre as a path to self-discovery, helping young people explore their personalities and express themselves with courage.</p>
+            <h2>Theatre, Cinema &amp; <em>Well-being</em></h2>
+            <p>An actor, producer, director and theatre artist, Mrs. Raane wrote and directed the theatrical production <em>Deva Shree Ganesha</em>, mentoring 30 students for the production. Her Marathi short film <em>Bol Bol Raani, Itta Itta Aani</em>, which she also wrote and directed, marks her acting debut.</p>
+            <p>A certified life coach and an ardent student of Kathak, she conducts workshops on physical, mental and emotional well-being, inspiring individuals to recognise their potential and lead purposeful lives.</p>
           </section>
           <section>
             <h2>Service Beyond <em>the Stage</em></h2>
-            <p>With her guidance and support, Atharva Foundation extends educational assistance to rural and tribal children and organises health and eye-check-up camps for women and the elderly.</p>
-            <p>Initiatives marking International Women’s Day and Teachers’ Day honour women for their contributions to society. Mrs. Varshaa Raane also personally visits and supports families of martyred soldiers across the country, reflecting her gratitude and commitment to service.</p>
+            <p>Through Atharva Foundation, Mrs. Raane supports educational initiatives for rural and tribal children, health and eye-check-up camps for women and senior citizens, and programmes celebrating women and educators. She also extends personal support to families of martyred soldiers, reflecting her commitment to compassion, service and national values.</p>
+            <p>Her contribution has been recognised through the FICCI FLO Mumbai Chapter Women Who Lead Award 2025–26 for Social Impact through Art and Theatre.</p>
           </section>
           <section>
-            <h2>A Creative <em>Journey</em></h2>
-            <p>An actor, producer and director, Mrs. Varshaa Raane has guided All Play Productions and the Atharva School of Drama and Performing Arts in nurturing young talent. More than 600 rural and urban school students and college youth have trained in drama, with over 50 productions created under her guidance.</p>
-            <p>She wrote and directed the theatrical production “Deva Shree Ganesha”. Her latest project, the short film “Bol Bol Raani, Itta Itta Aani”, marks her acting debut; she also wrote and directed the film.</p>
-            <p>Through her leadership and creative work, she continues to share Indian culture, arts and values while inspiring confidence and creativity in the next generation.</p>
-          </section>
-          <section className="founder-future">
-            <p className="eyebrow">LOOKING AHEAD</p>
-            <h2>More stories, <em>more stages</em></h2>
-            <p>Her creative ambitions include film festivals and future feature film, television and web series productions.</p>
-            <a className="text-link" href="/performances">Explore her theatre and film work ↗</a>
+            <h2>A Vision That <em>Inspires</em></h2>
+            <p>Mrs. Raane believes that creativity can transform lives and that every child deserves the opportunity to dream, express and shine. Through All Play Productions and her community initiatives, she continues to nurture young talent, celebrate Indian culture and create meaningful opportunities for the next generation.</p>
           </section>
         </div>
       </div>
